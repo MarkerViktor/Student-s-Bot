@@ -10,8 +10,8 @@ vk = vk_session.get_api()
 viktor = cl.User(94138203, name = 'Виктор', surname= 'Маркер', group='8Е81')
 misha = cl.User(175750670)
 while True:
-    #viktor.massege_send(vk,message = str(random.randint(0, 1000000000)))
-    misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
+    viktor.massege_send(vk,message = str(random.randint(0, 1000000000)))
+    #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
 
 
