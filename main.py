@@ -14,7 +14,7 @@ viktor = cl.User(94138203, name = 'Виктор', surname= 'Маркер', group
 misha = cl.User(175750670)
 while True:
     viktor.massege_send(vk,message = str(random.randint(0, 1000000000)))
-    time.sleep(900)
+    time.sleep(1850)
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
 
