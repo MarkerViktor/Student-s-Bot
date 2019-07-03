@@ -1,6 +1,9 @@
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
-import vk_api, random
-import config, classes as cl
+import vk_api
+import random
+import config
+import classes as cl
+import time
 
 
 vk_session = vk_api.VkApi(token=config.token)
@@ -11,6 +14,7 @@ viktor = cl.User(94138203, name = 'Виктор', surname= 'Маркер', group
 misha = cl.User(175750670)
 while True:
     viktor.massege_send(vk,message = str(random.randint(0, 1000000000)))
+    time.sleep(900)
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
 
