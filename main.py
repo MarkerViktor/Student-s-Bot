@@ -17,7 +17,7 @@ while True:
     time = time.split(' ')[4].split(':')
     hours = time[0]
     minutes = time[1]
-    response = requests.get(f'http://wttr.in/{city}', params={'format': 2, 'M': ''})
+    response = requests.get("http://wttr.in/'Томск'", params={'format': 2, 'M': ''})
     viktor.massege_send(vk,message = response.text.strip())
     time.sleep(1850)
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
