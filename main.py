@@ -14,12 +14,12 @@ viktor = cl.User(94138203, name = 'Виктор', surname= 'Маркер', group
 misha = cl.User(175750670)
 
 while True:
-    time = time.ctime(time.time()+25200)
-    time = time.split(' ')[4].split(':')
-    hours = time[0]
-    minutes = time[1]
+    time0 = time.ctime(time.time()+25200)
+    time1 = time0.split(' ')[4].split(':')
+    hours = time1[0]
+    minutes = time1[1]
     if int(hours) == 0 and int(minutes) == 38:
-        response = requests.get("http://wttr.in/'Томск'", params={'format': 2, 'M': ''})
+        response = requests.get("http://wttr.in/'Томск'", params={'format': 3, 'M': ''})
         viktor.massege_send(vk,message = response.text.strip())
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
