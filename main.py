@@ -3,8 +3,8 @@ import vk_api
 import random
 import config
 import classes as cl
-import time
 import requests
+import time
 
 vk_session = vk_api.VkApi(token=config.token)
 longpoll = VkBotLongPoll(vk_session, config.group_id)
