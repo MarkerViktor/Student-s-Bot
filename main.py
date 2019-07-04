@@ -12,14 +12,15 @@ vk = vk_session.get_api()
 
 viktor = cl.User(94138203, name = 'Виктор', surname= 'Маркер', group='8Е81')
 misha = cl.User(175750670)
+
 while True:
     time = time.ctime(time.time()+25200)
     time = time.split(' ')[4].split(':')
     hours = time[0]
     minutes = time[1]
-    if int(hours) == 0 and int(minutes) == 36:
+    if int(hours) == 0 and int(minutes) == 38:
         response = requests.get("http://wttr.in/'Томск'", params={'format': 2, 'M': ''})
-        viktor.massege_send(vk,message = 'Погода: \n' + response.text.strip())
+        viktor.massege_send(vk,message = response.text.strip())
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
 
