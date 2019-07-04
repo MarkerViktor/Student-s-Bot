@@ -18,8 +18,9 @@ while True:
     time1 = time0.split(' ')[4].split(':')
     hours = time1[0]
     minutes = time1[1]
-    if int(hours) == 0 and int(minutes) == 46:
-        response = requests.get("http://wttr.in/Томск", params={'format': 1, 'M': ''})
+    seconds = time1[2]
+    if int(hours) == 0 and int(minutes) == 48 and int(seconds) == 0:
+        response = requests.get("http://wttr.in/Томск", params={'format': 0, 'M': ''})
         viktor.massege_send(vk,message = 'Погода в Томске:\n' + response.text.strip())
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
