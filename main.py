@@ -18,7 +18,7 @@ while True:
     time1 = time0.split(' ')[4].split(':')
     hours = time1[0]
     minutes = time1[1]
-    if int(hours) == 0 and int(minutes) == 38:
+    if int(hours) == 0 and int(minutes) == 43:
         response = requests.get("http://wttr.in/'Томск'", params={'format': 3, 'M': ''})
         viktor.massege_send(vk,message = response.text.strip())
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
