@@ -4,7 +4,7 @@ import random
 import config
 import classes as cl
 import time
-
+import requests
 
 vk_session = vk_api.VkApi(token=config.token)
 longpoll = VkBotLongPoll(vk_session, config.group_id)
@@ -15,9 +15,10 @@ misha = cl.User(175750670)
 while True:
     time = time.ctime(time.time()+25200)
     time = time.split(' ')[4].split(':')
-    hours = int(time[0]) + 7
+    hours = time[0]
     minutes = time[1]
-    viktor.massege_send(vk,message = str(hours)+ ' ' + minutes)
+    response = requests.get(f'http://wttr.in/{city}', params={'format': 2, 'M': ''})
+    viktor.massege_send(vk,message = response.text.strip())
     time.sleep(1850)
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
 
