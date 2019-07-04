@@ -19,7 +19,7 @@ while True:
     hours = time1[0]
     minutes = time1[1]
     seconds = time1[2]
-    if int(hours) == 0 and int(minutes) == 52 and int(seconds) == 0:
+    if int(hours) == 0 and int(minutes) == 54 and int(seconds) == 0:
         response = requests.get("http://wttr.in/Томск", params={'format':3, 'M': ''})
         viktor.massege_send(vk,message = 'Погода в Томске:\n' + response.text.strip())
     #misha.massege_send(vk, message = str(random.randint(0, 1000000000)))
