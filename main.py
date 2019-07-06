@@ -9,6 +9,7 @@ import psycopg2
 
 conn = psycopg2.connect(config.DATABASE_URL, sslmode='require')
 
+print('g')
 vk_session = vk_api.VkApi(token=config.token)
 longpoll = VkBotLongPoll(vk_session, config.group_id)
 vk = vk_session.get_api()
