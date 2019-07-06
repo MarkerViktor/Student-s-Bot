@@ -1,6 +1,5 @@
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import vk_api
-import random
 import config
 import classes as cl
 import requests
