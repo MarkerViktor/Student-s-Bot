@@ -1,7 +1,7 @@
 import os
 import psycopg2
-DATABASE_URL = os.environ['DATABASE_URL']
 def connect():
+  DATABASE_URL = os.environ['DATABASE_URL']
   conn = psycopg2.connect(config.DATABASE_URL, sslmode='require')
   return conn.cursor()
 def search():
