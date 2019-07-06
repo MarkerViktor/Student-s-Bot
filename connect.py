@@ -17,7 +17,7 @@ def start():
                                 password=config.DATABASE_password,
                                 host=config.DATABASE_host)
         print('Base is connected')
-    else:
+    except BaseException:
         print("Can't become connected")
     vk = vk_session.get_api()
     cursor = conn.cursor()
