@@ -5,6 +5,9 @@ import config
 import classes as cl
 import requests
 import time
+import psycopg2
+
+conn = psycopg2.connect(config.DATABASE_URL, sslmode='require')
 
 vk_session = vk_api.VkApi(token=config.token)
 longpoll = VkBotLongPoll(vk_session, config.group_id)
