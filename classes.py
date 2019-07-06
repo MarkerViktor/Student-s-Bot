@@ -1,5 +1,4 @@
 import random
-
 class User:
     def __init__(self, id, name='', surname='', group='', school='', specialty=''):
         self.id = id
