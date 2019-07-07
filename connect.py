@@ -1,12 +1,12 @@
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll as vk_api_bot
-import config
-import psycopg2
+import config  # данные для подключения к vk.api и базе данных heruko
+import psycopg2  # работа с базами данных
 
 
 def make():
     """Функция покдлючения к базе данных и авторизации vk_api
-       Возвращает список объектов vk, longpoll, cursor"""
+       Возвращает кортеж объектов vk, longpoll, cursor"""
     try:
         cursor = connect_base('heroku')
     except psycopg2.ProgrammingError:
