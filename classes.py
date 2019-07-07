@@ -1,12 +1,14 @@
 import random
+
+
 class User:
-    def __init__(self, id, name='', surname='', group='', school='', specialty=''):
+    def __init__(self, id, name='', surname='', group='', school='', type_of_user = 'user'):
         self.id = id
         self.name = name
         self.surname = surname
-        self.group = group
+        self.study_group = group
         self.school = school
-        self.specialty = specialty
+        self.type_of_user = type_of_user
 
     def massege_send(self, vk, message='', attachment=''):
         vk.messages.send(
@@ -15,10 +17,13 @@ class User:
             attachment = ','.join(attachment),
             random_id = random.randint(0, 2147483647)
         )
+
+
 class Chat:
     def __init__(self, id, name=''):
         self.id = id
         self.name = name
+        self.official_name = name
 
     def massege_send(self, vk, message='', attachment=''):
         vk.messages.send(

@@ -1,6 +1,6 @@
-import connect
+import connect as connection
 
-connect.start()
+vk, longpoll, cursor = connection.make()
 
 
 
