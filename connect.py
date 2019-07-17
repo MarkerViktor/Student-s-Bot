@@ -1,40 +1,42 @@
 import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll as vk_api_bot
-import config  # данные для подключения к vk.api и базе данных heruko
+import vk_api.bot_longpoll
 import psycopg2  # работа с базами данных
+from config import *  # данные для подключения к vk.api и базе данных heruko
 
 
 def make():
     """Функция покдлючения к базе данных и авторизации vk_api
        Возвращает кортеж объектов vk, longpoll, cursor"""
     try:
-        cursor = connect_base('heroku')
+        cursor = connect_database('heroku')
     except psycopg2.ProgrammingError:
-        cursor = connect_base()
+        cursor = connect_database()
     except Exception:
-        print("Base can't be connected")
+        print("\tBase can't be connected")
 
     try:
         vk, longpoll = connect_vk()
+        print("\tVK is connected")
     except Exception:
-        print("VK can't be connected")
+        print("\tVK can't be connected")
+
     return vk, longpoll, cursor
 
 
 def connect_vk():
-    vk_session = vk_api.VkApi(token=config.token)
-    longpoll = vk_api.bot_longpoll.VkBotLongPoll(vk_session, config.group_id)
+    vk_session = vk_api.VkApi(token=token)
+    longpoll = vk_api.bot_longpoll.VkBotLongPoll(vk_session, group_id)
     return vk_session.get_api(), longpoll
 
 
-def connect_base(mode=''):
+def connect_database(mode=''):
     if mode == 'heroku':
-        conn = psycopg2.connect(config.DATABASE_host, sslmode='require')
+        conn = psycopg2.connect(DATABASE_host, sslmode='require')
     else:
-        conn = psycopg2.connect(dbname=config.DATABASE_name,
-                                user=config.DATABASE_user,
-                                password=config.DATABASE_password,
-                                host=config.DATABASE_host,
+        conn = psycopg2.connect(dbname=DATABASE_name,
+                                user=DATABASE_user,
+                                password=DATABASE_password,
+                                host=DATABASE_host,
                                 sslmode='require')
-    print('Base is connected')
+    print('\tBase is connected')
     return conn.cursor()
