@@ -21,8 +21,9 @@ def start_bot():
             event = bot['longpoll'].check()  # проверяем лонгпул на новое событие
             if len(event) != 0:
                 event = event[0].object
-                event_handler(bot, event)
                 print(Time, 'Обрабатываю событие\n', event)
+                event_handler(bot, event)
+
 
 
 def event_handler(bot, event):
