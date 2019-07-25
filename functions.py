@@ -80,7 +80,7 @@ def get_tasks():
     return []
 
 
-def message_send(bot, peer_id, message=' ', attachment=''):
+def message_send(bot, peer_id, message='   ', attachment=''):
     """Функция отправки сообщения конкретному пользователю"""
     bot['vk'].messages.send(
         peer_id=peer_id,
@@ -101,7 +101,10 @@ def mailing_get(bot, peer_id):
                                        'Изображения должны находиться в одном из ваших альбомов')
     print(message)
     attachments = attachments_get(message['attachments'])
+
     text = message['text']
+    if len(text) == 0:
+        text = '  '
     print(attachments,'\n',text)
 
     message_send(bot, peer_id, text, attachments)
