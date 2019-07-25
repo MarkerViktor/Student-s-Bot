@@ -109,7 +109,7 @@ def mailing_get(bot, peer_id):
                                 '(Пришлите "12345", чтобы подтвердить)')['text'] == '12345':
         for chat in chats:
             message_send(bot, groups[chat], text, attachments)
-        return True
+        return 'fsdfs'
 
 
 
