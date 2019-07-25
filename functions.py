@@ -35,7 +35,7 @@ def random_id():
 
 def data_get(bot, table_name):
     """Функция возвращает заданную таблицу из активной базы данных"""
-    bot['cursor'].execute('SELECT * FROM {0};'.format(table_name))
+    bot['cursor'].execute('SELECT * FROM {0} ORDER BY name;'.format(table_name))
     return dict(bot['cursor'].fetchall())
 
 
@@ -80,7 +80,7 @@ def get_tasks():
     return []
 
 
-def message_send(bot, peer_id, message='', attachment=''):
+def message_send(bot, peer_id, message=' ', attachment=''):
     """Функция отправки сообщения конкретному пользователю"""
     bot['vk'].messages.send(
         peer_id=peer_id,
@@ -89,9 +89,68 @@ def message_send(bot, peer_id, message='', attachment=''):
         random_id=random_id()
     )
 
+def mailing_get(bot, peer_id):
+    """Функция рассылки сообщений"""
+    groups = data_get(bot, 'groups')
+    chats = select_chats(bot, peer_id, groups)
+    if chats == None:
+        return None
+    message_send(bot, peer_id,'Вы выбрали:\n — '+'\n — '.join(chats))
+
+    message = answer_get(bot, peer_id, 'Пришлите сообщение для рассылки\n'
+                                       'Изображения должны находиться в одном из ваших альбомов')
+    print(message)
+    attachments = attachments_get(message['attachments'])
+    text = message['text']
+    print(attachments,'\n',text)
+
+    message_send(bot, peer_id, text, attachments)
+    if answer_get(bot, peer_id, 'Осуществить рассылку по указанным группам?\n'
+                                '(Пришлите "12345", чтобы подтвердить)')['text'] == '12345':
+        for chat in chats:
+            message_send(bot, groups[chat], text, attachments)
+        return True
+
+
+
+def select_chats(bot, peer_id, groups):
+    """Возвращает список имен чатов, выбраных пользователем"""
+    text_list = ('В ответном сообщении перечислите цифры напротив выбираемых групп через пробел или "все", ' 
+                'если требуется выбрать все группы\n')
+    number = 0
+    for group in groups.keys():
+        text_list += str(number) + ' — ' + group + '\n'
+        number += 1
+    answer = answer_get(bot, peer_id, text_list)
+    if answer == None:
+        return None
+    else:
+        try:
+            answer = answer['text']
+            if answer.lower().strip() == 'все':
+                return groups.keys()
+            answer = answer.split(' ')
+            chat_numbers = list()
+            for num in answer:
+                if int(num)<len(groups):
+                    num.strip()
+                    chat_numbers.append(int(num))
+            names = list()
+            number = 0
+            for group in groups.keys():
+                for num in chat_numbers:
+                    if num == number:
+                        names.append(group)
+                number += 1
+            return names
+        except Exception:
+            message_send(bot, peer_id, 'Неверено выбраны группы')
+            print('Неверно выбраны группы')
+            return select_chats(bot, peer_id, groups)
+
 
 def attachments_get(attachments):
-    """Функция озвращает список вложений в формате type+owned_id+'_'+id,
+    """Функция возвращает список вложений в формате type+owned_id+'_'+id,
        если вложения отсутствуют, возвращает пустой список"""
     if len(attachments) == 0:
         return []
