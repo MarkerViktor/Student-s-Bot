@@ -11,7 +11,8 @@ def answer_get(bot, id, message=''):
     """Функция вопрос-ответ.
        При ответе от объекта, которому задан вопрос, возвращает объект события vk_api;
        при ответе от другого пользователя или по истечению 10 time-out'ов возвращает None"""
-    message_send(bot, id, message)
+    if message != '':
+        message_send(bot, id, message)
     time = 0
     while True:
         time += 1
@@ -41,30 +42,38 @@ def data_get(bot, table_name):
 def add_to_database(bot, table_name, data):
     """Функция добавляет заданную строку в указанную таблицу активной базы данных"""
     try:
-        query = "INSERT INTO {0} VALUES ({1} , {2});".format(table_name, "'"+data[1]+"'", str(data[0]))
+        query = "INSERT INTO {0} VALUES ('{1}' , {2});".format(table_name, data[0], str(data[1]))
         print(query)
         bot['cursor'].execute(query)
         bot['conn'].commit()
         print('Запись', data, 'добавлена в таблицу', table_name)
+        return True
     except Exception:
         print('Запись', data, 'не добавлена в таблицу', table_name)
+        return False
 
 
 def add_chat_to_database(bot, peer_id, from_id):
     """Функция добавления id и name беседы ВК в базу данных groups,
        при приглашении бота в беседу"""
     print('Спрашиваю имя группы')
-    answer = answer_get(bot, from_id, 'Укажите официльное имя учебной группы (организации)' 
+    answer = answer_get(bot, from_id, 'Укажите официльное имя учебной группы (организации) ' 
                                       'в ответном сообщении вида:\n"8Е81" или "Профорги"')
-    if answer != None:
-        name = answer['text'].upper()
-        data = (peer_id, name)
-        add_to_database(bot, 'groups', data)
-    else:
+    if answer == None:
         message_send(bot, from_id, 'Название группы не получено, '
                                    'исключите бота из беседы и повторите процедуру добавления')
         print('Имя не получено')
-        return None
+        return False
+
+    name = answer['text'].upper()
+    data = (name, peer_id)
+
+    if add_to_database(bot, 'groups', data):
+        message_send(bot, from_id, 'Беседа добавлена в базу данных')
+        return True
+    else:
+        message_send(bot, from_id, 'Ошибка добавления беседы в базу данных.\nИсключите бота из беседы и повторите процедуру добавления')
+        return False
 
 
 def get_tasks():

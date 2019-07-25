@@ -1,10 +1,6 @@
 import connect as connection  # подключение к базе данных и vk.api
 from functions import *
 import time
-from vk_api.bot_longpoll import  VkBotEventType
-
-
-#talks = dict()
 
 
 def start_bot():
@@ -17,13 +13,12 @@ def start_bot():
             for task in tasks:
                 task_performer(bot, task)
         else:
-            print(Time, 'Запланированных заданий нет')
+            print(Time)
             event = bot['longpoll'].check()  # проверяем лонгпул на новое событие
             if len(event) != 0:
                 event = event[0].object
                 print(Time, 'Обрабатываю событие\n', event)
                 event_handler(bot, event)
-
 
 
 def event_handler(bot, event):
@@ -32,10 +27,17 @@ def event_handler(bot, event):
     from_id = event['from_id']
     text = event['text']
     attachments = attachments_get(event['attachments'])
-    print('Событие от {0} в диалоге {1} с текстом "{2}" и {3} вложениями'.format(from_id, peer_id, text, len(attachments)))
+
+    print('Событие от {0} в диалоге {1} (текст: "{2}", вложений: {3})'.format(from_id, peer_id, text, len(attachments)))
+
+    #  Событие добавления бота в беседу
     if 'action' in event and event['action']['type'] == 'chat_invite_user':
-            print('приглашение в беседу')
-            add_chat_to_database(bot, peer_id, from_id)
+        print('Приглашение в беседу', peer_id, 'от', from_id)
+        add_chat_to_database(bot, peer_id, from_id)
+        return None
+
+
+
 
 
 def task_performer(bot, task):
@@ -43,9 +45,9 @@ def task_performer(bot, task):
     pass
 
 
-
-
 start_bot()
+
+
 
 
 
