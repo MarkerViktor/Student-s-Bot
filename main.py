@@ -45,6 +45,7 @@ def handler(bot, event):
             message_send(bot, peer_id, 'Обращение не обработано')
         else:
             print('Обращение обработано')
+            message_send(bot, peer_id, 'Обращение обработано')
 
 
 def handler_2(bot, peer_id):
