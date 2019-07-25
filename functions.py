@@ -106,8 +106,13 @@ def mailing_get(bot, peer_id):
         return None
     message_send(bot, peer_id,'Вы выбрали:\n — '+'\n — '.join(chats))
 
-    message = answer_get(bot, peer_id, 'Пришлите сообщение для рассылки\n'
-                                       'Изображения должны находиться в одном из ваших альбомов')
+    message = answer_get(bot, peer_id, 'Отправьте сообщение с текстом и вложениями для рассылки или перешлите  другое '
+                                       'сообщение, содержащее в себе текст и вложения')
+
+    if len(message['fwd_messages'])>0:
+        message = message['fwd_messages'][0]
+    if 'reply_message' in message:
+        message = message['reply_message']
     print(message)
     attachments = attachments_get(message['attachments'])
 
@@ -117,12 +122,11 @@ def mailing_get(bot, peer_id):
     print(attachments,'\n',text)
 
     message_send(bot, peer_id, text, attachments)
-    if answer_get(bot, peer_id, 'Осуществить рассылку по указанным группам?\n'
+    if answer_get(bot, peer_id, 'Осуществить рассылку?\n'
                                 '(Пришлите "12345", чтобы подтвердить)')['text'] == '12345':
         for chat in chats:
             message_send(bot, groups[chat], text, attachments)
         return 'OK'
-
 
 
 def select_chats(bot, peer_id, groups):
@@ -170,7 +174,8 @@ def attachments_get(attachments):
     for item in attachments:
         type = item['type']
         owner_id = item[type]['owner_id']
+        access_key = item[type]['access_key']
         id = item[type]['id']
-        item_name = type + str(owner_id)+'_'+str(id)
+        item_name = type + str(owner_id) + '_' + str(id) + '_' + str(access_key)
         items.append(item_name)
     return items
