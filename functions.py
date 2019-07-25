@@ -80,14 +80,23 @@ def get_tasks():
     return []
 
 
-def message_send(bot, peer_id, message='   ', attachment=''):
+def message_send(bot, peer_id, message='   ', attachments=''):
     """Функция отправки сообщения конкретному пользователю"""
-    bot['vk'].messages.send(
-        peer_id=peer_id,
-        message=message,
-        attachment=','.join(attachment),
-        random_id=random_id()
-    )
+    attachment = ','.join(attachments),
+    try:
+        bot['vk'].messages.send(
+            peer_id=peer_id,
+            message=message,
+            attachment=attachment,
+            random_id=random_id()
+        )
+    except Exception:
+        bot['vk'].messages.send(
+            peer_id=peer_id,
+            message='  \n\t',
+            attachment=attachment,
+            random_id=random_id()
+        )
 
 def mailing_get(bot, peer_id):
     """Функция рассылки сообщений"""
