@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Heroku DATABASE" uuid="6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d">
+    <data-source source="LOCAL" name="heroku" uuid="08e98a58-21eb-48c3-b4f0-826bcd3f7ac2">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
