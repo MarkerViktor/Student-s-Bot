@@ -33,7 +33,6 @@ def message_send(bot, peer_id, message='', attachments='', keys=''):
             random_id=random_id()
         )
 
-message_send()
 def answer_get(bot, id, message=''):
 
     """Функция вопрос-ответ.
