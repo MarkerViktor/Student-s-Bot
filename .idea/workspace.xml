@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="Обновление">
+      <change afterPath="$PROJECT_DIR$/new_func.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/connect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,15 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#66#0" expanded="true" />
-                <element signature="e#2095#2152#0" />
-              </folding>
+            <state relative-caret-position="663">
+              <caret line="42" column="84" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -78,8 +77,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="119">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -87,62 +95,77 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="-120">
+              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
-                <element signature="e#153#189#0" />
-                <element signature="e#259#813#0" />
-                <element signature="e#259#401#1" />
-                <element signature="e#459#620#0" />
-                <element signature="e#651#813#0" />
-                <element signature="e#858#1139#1" />
-                <element signature="e#1374#1584#0" />
-                <element signature="e#1655#1664#0" />
-                <element signature="e#1702#1947#0" />
-                <element signature="e#1702#1824#1" />
-                <element signature="e#0#48#1" />
-                <element signature="e#1988#2535#0" />
-                <element signature="e#1988#2163#1" />
-                <element signature="e#2268#2518#0" />
-                <element signature="e#2582#3920#0" />
-                <element signature="e#2582#2713#1" />
-                <element signature="e#2731#2877#0" />
-                <element signature="e#2934#3001#0" />
-                <element signature="e#3112#3920#0" />
-                <element signature="e#3129#3730#0" />
-                <element signature="e#3358#3464#0" />
-                <element signature="e#3403#3464#0" />
-                <element signature="e#3571#3705#0" />
-                <element signature="e#3616#3677#0" />
-                <element signature="e#3769#3920#0" />
-                <element signature="e#3971#4515#0" />
-                <element signature="e#3971#4125#1" />
-                <element signature="e#4143#4404#0" />
-                <element signature="e#0#66#0" />
-                <element signature="e#26#66#0" />
-                <element signature="e#4435#4515#0" />
-                <element signature="e#4571#5580#0" />
-                <element signature="e#4571#4756#1" />
-                <element signature="e#4829#4974#0" />
-                <element signature="e#5007#5215#0" />
-                <element signature="e#5034#5160#0" />
-                <element signature="e#5332#5412#0" />
-                <element signature="e#5431#5580#0" />
-                <element signature="e#5618#6819#0" />
-                <element signature="e#5618#5704#1" />
-                <element signature="e#5943#6110#0" />
-                <element signature="e#6541#6650#0" />
-                <element signature="e#6700#6819#0" />
+                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#281#423#1" />
+                <element signature="e#673#835#0" />
+                <element signature="e#880#1710#0" />
+                <element signature="e#880#1161#1" />
+                <element signature="e#1260#1710#0" />
+                <element signature="e#1396#1606#0" />
+                <element signature="e#1642#1710#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/new_func.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
+        <entry file="file://$PROJECT_DIR$/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="20" selection-end-column="20" />
+            <state relative-caret-position="306">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/groups">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="1473c987-3e20-4a45-b9e9-a00ec76988e3">
+              <filtering>
+                <filter text="" />
+              </filtering>
+              <column-attributes>
+                <column name="ctid" enabled="false" position="-1" />
+              </column-attributes>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="58" column="1" lean-forward="true" selection-end-line="58" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connect.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,6 +176,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="package.json" />
         <option value="Python Script" />
       </list>
     </option>
@@ -177,24 +201,28 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/classes_and_functions.py" />
         <option value="$PROJECT_DIR$/classes" />
-        <option value="$PROJECT_DIR$/connect.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/classes.py" />
-        <option value="$PROJECT_DIR$/functions.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/connect.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/test1.py" />
+        <option value="$PROJECT_DIR$/functions.py" />
+        <option value="$PROJECT_DIR$/new_func.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="975" />
-    <option name="height" value="1047" />
+    <option name="x" value="502" />
+    <option name="y" value="-21" />
+    <option name="width" value="650" />
+    <option name="height" value="698" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -239,7 +267,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test1.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -257,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration name="connect" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Student-s-Bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -302,8 +330,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python">
+      <module name="Student-s-Bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Маркер Виктор\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.test" />
       <item itemvalue="Python.connect" />
     </list>
     <recent_temporary>
@@ -341,6 +392,11 @@
       <workItem from="1564259450511" duration="1004000" />
       <workItem from="1564326657778" duration="764000" />
       <workItem from="1564327440861" duration="5536000" />
+      <workItem from="1564382017071" duration="1686000" />
+      <workItem from="1564388354649" duration="2438000" />
+      <workItem from="1564390813738" duration="220000" />
+      <workItem from="1564391113264" duration="12832000" />
+      <workItem from="1564416544646" duration="6641000" />
     </task>
     <task id="LOCAL-00001" summary="git login">
       <created>1562441201362</created>
@@ -517,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564079088646</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Обновление">
+      <created>1564382037210</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1564382037210</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113928000" />
+    <option name="totallyTimeSpent" value="137745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -536,13 +599,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09334764" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.10085837" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32962137" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32962137" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49195278" weight="0.32962137" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49034336" weight="0.20935412" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -550,15 +613,39 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946353" weight="0.32962137" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32962137" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5080472" side_tool="true" weight="0.32962137" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.19098713" side_tool="true" weight="0.32962137" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49517167" weight="0.32962137" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4914163" weight="0.32962137" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.8090129" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3299356" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18937768" />
+      <window_info anchor="right" id="Database" order="4" weight="0.12392704" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10085837" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32962137" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32962137" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49034336" visible="true" weight="0.20935412" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3997773" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32962137" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946353" weight="0.32962137" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32962137" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.19098713" side_tool="true" weight="0.32962137" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49517167" weight="0.32962137" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.8090129" weight="0.32962137" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.3299356" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.12392704" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -570,23 +657,80 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Student_s_Bot$connect.coverage" NAME="connect Coverage Results" MODIFIED="1562476442486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564330215085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564409819868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$test.coverage" NAME="test Coverage Results" MODIFIED="1564420842604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="das://6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/database/d122m0li79605d/schema/public/table/users" />
     <entry file="file://$PROJECT_DIR$/help.txt" />
-    <entry file="file://$PROJECT_DIR$/config.py">
+    <entry file="das://6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/database/d122m0li79605d/schema/public/table/groups" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="89" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="89" />
+        <state relative-caret-position="17">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="das://6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/database/d122m0li79605d/schema/public/table/groups">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" column="84" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python37/site-packages/psycopg2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="1" lean-forward="true" selection-end-line="58" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/groups">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="44ec5f71-e3f8-4ffa-b635-b534d0c250b4">
+        <state projectRestartId="1473c987-3e20-4a45-b9e9-a00ec76988e3">
           <filtering>
             <filter text="" />
           </filtering>
@@ -596,100 +740,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6e4c7cd9-e3f2-4f23-88c5-2cbfb5d6f99d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="-120">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
-            <element signature="e#153#189#0" />
-            <element signature="e#259#813#0" />
-            <element signature="e#259#401#1" />
-            <element signature="e#459#620#0" />
-            <element signature="e#651#813#0" />
-            <element signature="e#858#1139#1" />
-            <element signature="e#1374#1584#0" />
-            <element signature="e#1655#1664#0" />
-            <element signature="e#1702#1947#0" />
-            <element signature="e#1702#1824#1" />
-            <element signature="e#0#48#1" />
-            <element signature="e#1988#2535#0" />
-            <element signature="e#1988#2163#1" />
-            <element signature="e#2268#2518#0" />
-            <element signature="e#2582#3920#0" />
-            <element signature="e#2582#2713#1" />
-            <element signature="e#2731#2877#0" />
-            <element signature="e#2934#3001#0" />
-            <element signature="e#3112#3920#0" />
-            <element signature="e#3129#3730#0" />
-            <element signature="e#3358#3464#0" />
-            <element signature="e#3403#3464#0" />
-            <element signature="e#3571#3705#0" />
-            <element signature="e#3616#3677#0" />
-            <element signature="e#3769#3920#0" />
-            <element signature="e#3971#4515#0" />
-            <element signature="e#3971#4125#1" />
-            <element signature="e#4143#4404#0" />
-            <element signature="e#0#66#0" />
-            <element signature="e#26#66#0" />
-            <element signature="e#4435#4515#0" />
-            <element signature="e#4571#5580#0" />
-            <element signature="e#4571#4756#1" />
-            <element signature="e#4829#4974#0" />
-            <element signature="e#5007#5215#0" />
-            <element signature="e#5034#5160#0" />
-            <element signature="e#5332#5412#0" />
-            <element signature="e#5431#5580#0" />
-            <element signature="e#5618#6819#0" />
-            <element signature="e#5618#5704#1" />
-            <element signature="e#5943#6110#0" />
-            <element signature="e#6541#6650#0" />
-            <element signature="e#6700#6819#0" />
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#281#423#1" />
+            <element signature="e#673#835#0" />
+            <element signature="e#880#1710#0" />
+            <element signature="e#880#1161#1" />
+            <element signature="e#1260#1710#0" />
+            <element signature="e#1396#1606#0" />
+            <element signature="e#1642#1710#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="33" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <element signature="e#2095#2152#0" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,8 +1,5 @@
 import random
-import vk_api
-import vk_api.bot_longpoll
-import psycopg2  # работа с базами данных
-import time
+from vk_api import keyboard
 from config import *
 from classes import *
 
@@ -11,12 +8,13 @@ def random_id():
     return random.randint(0, 2147483647)
 
 
-def message_send(bot, peer_id, message='   ', attachments=''):
+def message_send(bot, peer_id, message='', attachments='', keys=''):
     """Функция отправки сообщения конкретному пользователю
     :param bot:
     :param peer_id:
     :param message:
     :param attachments:
+    :param keys:
     """
     attachment = ','.join(attachments),
     try:
@@ -24,7 +22,8 @@ def message_send(bot, peer_id, message='   ', attachments=''):
             peer_id=peer_id,
             message=message,
             attachment=attachment,
-            random_id=random_id()
+            random_id=random_id(),
+            keyboard=keys.get_keyboard()
         )
     except Exception:
         bot['vk'].messages.send(
@@ -34,7 +33,7 @@ def message_send(bot, peer_id, message='   ', attachments=''):
             random_id=random_id()
         )
 
-
+message_send()
 def answer_get(bot, id, message=''):
 
     """Функция вопрос-ответ.
@@ -59,7 +58,30 @@ def answer_get(bot, id, message=''):
             else:
                 message_send(bot, peer_id, "Student's Bot сейчас занят")
         if time == 10:
+            message_send(bot, id, 'Работа заверщена')
             raise NoAnswer
+
+
+def choice_generator(bot, peer_id, question, options):
+    """
+    Функция возвраазет название выбранного пункта
+    :param bot:
+    :param peer_id:
+    :param question:
+    :param options:
+    """
+    text = question
+    number = 0
+    for option in options:
+        text += '\n'+ str(number) + ' — ' + option
+        number += 1
+    answer = answer_get(bot, peer_id, text)['text']
+
+    if answer.isdigit() and int(answer) < number:
+        return options[int(answer)]
+    else:
+        message_send(bot, peer_id, 'Неверная команда')
+        choice_generator(bot, peer_id, question, options)
 
 
 def tasks_get():
@@ -102,37 +124,41 @@ def select_chats(bot, peer_id, groups):
     :return:
     """
     text_list = ('В ответном сообщении перечислите цифры напротив выбираемых групп через пробел или "все", ' 
-                'если требуется выбрать все группы\n')
+                'если требуется выбрать все группы')
     number = 0
     for group in groups.keys():
-        text_list += str(number) + ' — ' + group + '\n'
+        text_list += '\n' + str(number) + ' — ' + group
         number += 1
-    answer = answer_get(bot, peer_id, text_list)
-    if answer == None:
-        return None
-    else:
-        try:
-            answer = answer['text']
-            if answer.lower().strip() == 'все':
-                return groups.keys()
-            answer = answer.split(' ')
-            chat_numbers = list()
-            for num in answer:
-                if int(num)<len(groups):
-                    num.strip()
-                    chat_numbers.append(int(num))
-            names = list()
-            number = 0
-            for group in groups.keys():
-                for num in chat_numbers:
-                    if num == number:
-                        names.append(group)
-                number += 1
-            return names
-        except Exception:
-            message_send(bot, peer_id, 'Неверено выбраны группы')
-            print('Неверно выбраны группы')
-            return select_chats(bot, peer_id, groups)
+
+    try:
+        print('Спрашиваю названия бесед')
+        answer = answer_get(bot, peer_id, text_list)
+    except NoAnswer:
+        print('Ответ не получен')
+        message_send(bot, peer_id, 'Ответ не получен')
+
+    try:
+        answer = answer['text']
+        if answer.lower().strip() == 'все':
+            return groups.keys()
+        answer = answer.split(' ')
+        chat_numbers = list()
+        for num in answer:
+            if int(num)<len(groups):
+                num.strip()
+                chat_numbers.append(int(num))
+        names = list()
+        number = 0
+        for group in groups.keys():
+            for num in chat_numbers:
+                if num == number:
+                    names.append(group)
+            number += 1
+        return names
+    except Exception:
+        print('Неверно выбраны группы')
+        message_send(bot, peer_id, 'Неверено выбраны группы')
+        return select_chats(bot, peer_id, groups)
 
 
 def add_to_database(bot, table_name, data):
@@ -143,42 +169,45 @@ def add_to_database(bot, table_name, data):
     :return:
     """
     try:
-        query = "INSERT INTO {0} VALUES ('{1}' , {2});".format(table_name, data[0], str(data[1]))
+        query = "INSERT INTO {0} VALUES ('{1}', {2}, '{3}');".format(table_name, data[0], str(data[1]), data[2])
         print(query)
         bot['cursor'].execute(query)
         bot['conn'].commit()
         print('Запись', data, 'добавлена в таблицу', table_name)
-        return True
+        return 'ОК'
     except Exception:
         print('Запись', data, 'не добавлена в таблицу', table_name)
-        return False
+        return None
 
 
-def add_chat_to_database(bot, peer_id, from_id):
+def add_chat_to_database(bot, peer_id, id):
     """Функция добавления id и name беседы ВК в базу данных groups,
        при приглашении бота в беседу
        :param bot:
        :param peer_id:
        :param from_id:
        :return: """
-    print('Спрашиваю имя группы')
-    answer = answer_get(bot, from_id, 'Укажите официльное имя учебной группы (организации) ' 
-                                      'в ответном сообщении вида:\n"8Е81" или "Профорги"')
-    if answer == None:
-        message_send(bot, from_id, 'Название группы не получено, '
-                                   'исключите бота из беседы и повторите процедуру добавления')
-        print('Имя не получено')
-        return False
+    try:
+        print('Спращиваю имя беседы и школы')
+        answer = answer_get(bot, peer_id, 'В ответном сообщении укажите официльные названия беседы и '
+                                           'инженерной школы через пробел \n (пример: 8Е81 ИШИТР)"')
+    except NoAnswer:
+        print('Имя не получено, время ожидания ответа истекло')
+        message_send(bot, peer_id, 'Название группы не получено')
+        return add_chat_to_database(bot, peer_id, id)
+    try:
+        name, school = answer['text'].upper().split(' ')
+    except Exception:
+        message_send(bot, peer_id, 'Неверный формат названия')
+        add_chat_to_database(bot, peer_id, id)
 
-    name = answer['text'].upper()
-    data = (name, peer_id)
-
-    if add_to_database(bot, 'groups', data):
-        message_send(bot, from_id, 'Беседа добавлена в базу данных')
-        return True
+    if add_to_database(bot, 'groups', (name, id, school)) == 'ОК':
+        message_send(bot, peer_id, 'Беседа добавлена в базу данных')
+        return 'ОК'
     else:
-        message_send(bot, from_id, 'Ошибка добавления беседы в базу данных.\nИсключите бота из беседы и повторите процедуру добавления')
-        return False
+        message_send(bot, peer_id, 'Ошибка добавления беседы в базу данных.\n'
+                                   'Исключите бота из беседы и повторите процедуру добавления')
+        return None
 
 
 def mailing_get(bot, peer_id):
@@ -193,7 +222,6 @@ def mailing_get(bot, peer_id):
         return None
 
     message_send(bot, peer_id,'Вы выбрали:\n — '+'\n — '.join(chats))
-
 
     message = answer_get(bot, peer_id, 'Отправьте сообщение с текстом и вложениями для рассылки или перешлите  другое '
                                        'сообщение, содержащее в себе текст и вложения')

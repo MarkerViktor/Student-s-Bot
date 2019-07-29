@@ -6,20 +6,20 @@ from config import *  # данные для подключения к vk.api и 
 
 def make():
     """Функция покдлючения к базе данных и авторизации vk_api
-       Возвращает кортеж объектов vk, longpoll, cursor"""
+       Возвращает словарь с ключами vk, longpoll, cursor"""
     try:
         cursor, conn = connect_database('heroku')
-    except psycopg2.ProgrammingError:
+    except Exception:
         cursor, conn = connect_database()
     except Exception:
         print("\tBase can't be connected")
 
     try:
         vk, longpoll = connect_vk()
+        vk._method
         print("\tVK is connected")
     except Exception:
         print("\tVK can't be connected")
-
     return {'vk': vk, 'longpoll': longpoll, 'cursor': cursor, 'conn': conn}
 
 

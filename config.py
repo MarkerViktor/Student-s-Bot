@@ -15,3 +15,4 @@ except KeyError:
     print('Connecting by PC:')
 
 group_id = 182132769
+admin_id = 94138203

@@ -16,47 +16,31 @@ def Bot(bot):
         if len(event) != 0:
             event = event[0].object
             print(Time, 'Обрабатываю событие\n', event)
-            handler(bot, event)
+            if handler(bot, event) == 'ОК':
+                message_send(bot, event['from_id'], 'Завершено')
 
 
 def handler(bot, event):
     """Функция главного обработчика событий бота"""
     peer_id = event['peer_id']
     from_id = event['from_id']
-    if peer_id != from_id:
-        return 0
 
-    #  Событие добавления бота в беседу
+    type = command_type(bot, event)
+    if type == 'Добавление в беседу':
+        print("Добавление в беседу")
+        return add_chat_to_database(bot, from_id, peer_id)
+    elif type == 'Рассылка':
+        return mailing_get(bot, peer_id)
+
+
+def command_type(bot, event):
+    peer_id = event['peer_id']
     if 'action' in event and event['action']['type'] == 'chat_invite_user':
-        try:
-            add_chat_to_database(bot, peer_id, from_id)
-        except NoAnswer:
-            message_send(bot, peer_id, '')
-
-    if text != '':
-        command = answer_get(bot, peer_id, 'Выберите функцию:\n'
-                                           '1 —  Рассылка;')
-        if command == None:
-            return None
-        text = command['text']
-        try:
-            if text == '1':
-                try:
-                    mailing_get(bot, peer_id)
-                except NoAnswer:
-                    message_send(bot, peer_id, '')
-
-            else:
-                message_send(bot, peer_id, 'Неверная команда, попробуйте снова')
-                handler(bot, event)
-
-
-
-
-
-def task_performer(bot, task):
-    """Функция обработки запланированного события"""
-    pass
+        return 'Добавление в беседу'
+    else:
+        return choice_generator(bot, peer_id, 'Выберите', ['Рассылка',
+                                                           'Добавить беседу'
+                                                           'Добавить пользователя'])
 
 
 bot_start()
