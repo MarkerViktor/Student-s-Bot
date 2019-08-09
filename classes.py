@@ -90,6 +90,7 @@ class Message:
                                           '0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing')
                     return 'Другое обращение'
                 if peer_id != event['from_id']:
+                    self.Send(event['from_id'], "Student's Bot сейчас занят🙃")
                     return 'Другое обращение'
                 if len(event['fwd_messages']) != 0:
                     event = event['fwd_messages'][0]
