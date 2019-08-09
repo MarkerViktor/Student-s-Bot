@@ -2,7 +2,9 @@ import connect as connection  # подключение к базе данных 
 from func import *
 from classes import *
 import time
-
+##############################################################################
+# написать функцию проверки на фоновые и служебные ответы метода Message.Get #
+##############################################################################
 
 def bot_start():
     global bot
@@ -107,9 +109,11 @@ def add_user(peer_id):
                  keyboard=Keyboard.Make({'Отмена': 'negative'}))
     Message.Send(peer_id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
                           'разместите несколько ссылок (каждая на новой строке)')
+
     answer = Message.Get(peer_id)
     if answer == 'Ответ не получен' or answer == 'Отмена':
         return answer
+
     try:
         answer = answer.split('\n')
         for user in answer:
