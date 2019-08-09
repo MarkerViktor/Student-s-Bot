@@ -59,7 +59,7 @@ def handler(event):
         result = mailing(peer_id) #  рассылка
         return result
     elif mode == 'Отмена':
-        handler(event)
+        return 'OK'
 
 
 def get_mode(event):
