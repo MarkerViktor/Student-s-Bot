@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="190" column="47" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="47" />
+            <state relative-caret-position="336">
+              <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
               <folding>
                 <element signature="e#99#1892#0" />
                 <element signature="e#164#209#0" />
@@ -77,12 +77,8 @@
                 <element signature="e#0#27#1" />
                 <element signature="e#1467#1625#0" />
                 <element signature="e#1742#1825#0" />
-                <element signature="e#1914#4131#0" />
                 <element signature="e#1956#2001#0" />
-                <element signature="e#2055#2886#0" />
                 <element signature="e#2055#2240#1" />
-                <element signature="e#2285#2636#0" />
-                <element signature="e#2363#2636#0" />
                 <element signature="e#2940#3663#0" />
                 <element signature="e#2940#3113#1" />
                 <element signature="e#3238#3642#0" />
@@ -104,11 +100,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+            <state relative-caret-position="221">
+              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding>
                 <element signature="e#143#412#0" />
                 <element signature="e#210#243#0" />
+                <element signature="e#434#1052#0" />
+                <element signature="e#454#1052#0" />
+                <element signature="e#616#1103#0" />
+                <element signature="e#918#1047#0" />
+                <element signature="e#1083#2115#0" />
+                <element signature="e#941#1244#0" />
+                <element signature="e#1334#1524#0" />
+                <element signature="e#1336#1494#0" />
+                <element signature="e#1528#1687#0" />
                 <element signature="e#1724#1830#0" />
                 <element signature="e#1868#1927#0" />
                 <element signature="e#1882#2362#0" />
@@ -390,7 +395,7 @@
       <workItem from="1564996268112" duration="5062000" />
       <workItem from="1565203654129" duration="2902000" />
       <workItem from="1565252662733" duration="19864000" />
-      <workItem from="1565367293567" duration="11596000" />
+      <workItem from="1565367293567" duration="12438000" />
     </task>
     <task id="LOCAL-00001" summary="git login">
       <created>1562441201362</created>
@@ -609,11 +614,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565378460835</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Обновление">
+      <created>1565379327835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1565379327835</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Обновление">
+      <created>1565379647352</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1565379647352</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57870000" />
+    <option name="totallyTimeSpent" value="58712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,7 +738,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Student_s_Bot$connect.coverage" NAME="connect Coverage Results" MODIFIED="1562476442486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Students_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564427189274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1565379139217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1565380115158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$new_func.coverage" NAME="new_func Coverage Results" MODIFIED="1565291332273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$test.coverage" NAME="test Coverage Results" MODIFIED="1564420842604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -880,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="190" column="47" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="47" />
+        <state relative-caret-position="336">
+          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
           <folding>
             <element signature="e#99#1892#0" />
             <element signature="e#164#209#0" />
@@ -895,12 +914,8 @@
             <element signature="e#0#27#1" />
             <element signature="e#1467#1625#0" />
             <element signature="e#1742#1825#0" />
-            <element signature="e#1914#4131#0" />
             <element signature="e#1956#2001#0" />
-            <element signature="e#2055#2886#0" />
             <element signature="e#2055#2240#1" />
-            <element signature="e#2285#2636#0" />
-            <element signature="e#2363#2636#0" />
             <element signature="e#2940#3663#0" />
             <element signature="e#2940#3113#1" />
             <element signature="e#3238#3642#0" />
@@ -920,11 +935,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        <state relative-caret-position="221">
+          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding>
             <element signature="e#143#412#0" />
             <element signature="e#210#243#0" />
+            <element signature="e#434#1052#0" />
+            <element signature="e#454#1052#0" />
+            <element signature="e#616#1103#0" />
+            <element signature="e#918#1047#0" />
+            <element signature="e#1083#2115#0" />
+            <element signature="e#941#1244#0" />
+            <element signature="e#1334#1524#0" />
+            <element signature="e#1336#1494#0" />
+            <element signature="e#1528#1687#0" />
             <element signature="e#1724#1830#0" />
             <element signature="e#1868#1927#0" />
             <element signature="e#1882#2362#0" />

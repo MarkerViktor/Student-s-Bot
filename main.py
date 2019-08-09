@@ -73,6 +73,8 @@ def get_mode(event):
         answer = Message.Get(peer_id)
         if answer == 'Ответ не получен':
             return answer
+        elif answer == 'Другое обращение':
+            continue
         elif answer not in options:
             Message.Send(peer_id, 'Используйте кнопки')
         else:
@@ -85,9 +87,10 @@ def add_chat_or_user(peer_id):
     Message.Send(peer_id, message='Кого (что) вы хотите добавить в базу данных бота?', keyboard=keyboard)
     while True:
         answer = Message.Get(peer_id)
+        print(answer)
         if answer == 'Ответ не получен' or answer == 'Отмена':
             return answer
-        elif answer == answer == 'Другое обращение':
+        elif answer == 'Другое обращение':
             continue
         elif answer not in options:
             Message.Send(peer_id, 'Используйте кнопки')
