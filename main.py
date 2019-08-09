@@ -87,6 +87,8 @@ def add_chat_or_user(peer_id):
         answer = Message.Get(peer_id)
         if answer == 'Ответ не получен' or answer == 'Отмена':
             return answer
+        elif answer == answer == 'Другое обращение':
+            continue
         elif answer not in options:
             Message.Send(peer_id, 'Используйте кнопки')
         elif answer == 'Пользователь':

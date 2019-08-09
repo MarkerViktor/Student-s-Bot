@@ -83,6 +83,12 @@ class Message:
             if len(event) != 0:
                 event = event[0].object
                 print(event)
+                if 'action' in event and event['action']['type'] == 'chat_invite_user':
+                    self.Send(peer_id, f'ID = {peer_id} \nЧтобы использовать бота в этой беседе,впишите указанный '
+                                       f'ID в таблицу, соответственно имени беседы')
+                    self.Send(peer_id, 'Cсылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_'
+                                          '0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing')
+                    return 'Другое обращение'
                 if peer_id != event['from_id']:
                     return 'Другое обращение'
                 if len(event['fwd_messages']) != 0:
