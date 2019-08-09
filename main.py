@@ -31,6 +31,7 @@ def Bot(bot):
                 Message.Send(event['from_id'], 'Завершено успешно', keyboard=VkKeyboard.get_empty_keyboard())
             elif result == 'Ответ не получен':
                 Message.Send(event['from_id'], 'Время ожидания истекло', keyboard=VkKeyboard.get_empty_keyboard())
+                print('Время ожидания истекло')
 
 
 def handler(event):
@@ -43,6 +44,7 @@ def handler(event):
         if 'action' in event and event['action']['type'] == 'chat_invite_user':
             Message.Send(peer_id, f'ID = {peer_id} \nЧтобы использовать бота в этой беседе, '
                                    'воспользуйтесь функцией "Добавить беседу в БД"')
+            return None
         else:
             return 'Событие из беседы'
 
@@ -50,12 +52,14 @@ def handler(event):
     mode = get_mode(event)
     if mode == 'Ответ не получен':
         return mode
-    if mode == 'Добавить пользователя\беседу в БД':
+    elif mode == 'Добавить пользователя\беседу в БД':
         result = add_chat_or_user(peer_id) #  добавление пользователя или чата в базу данных
         return result
     elif mode == 'Рассылка':
         result = mailing(peer_id) #  рассылка
         return result
+    elif mode == 'Отмена':
+        handler(event)
 
 
 def get_mode(event):
@@ -76,12 +80,12 @@ def get_mode(event):
 
 
 def add_chat_or_user(peer_id):
-    options = ['Пользователь']
+    options = ['Пользователь', 'Отмена']
     keyboard = Keyboard.Make(options = options)
     Message.Send(peer_id, message='Кого (что) вы хотите добавить в базу данных бота?', keyboard=keyboard)
     while True:
         answer = Message.Get(peer_id)
-        if answer == 'Ответ не получен':
+        if answer == 'Ответ не получен' or answer == 'Отмена':
             return answer
         elif answer not in options:
             Message.Send(peer_id, 'Используйте кнопки')
