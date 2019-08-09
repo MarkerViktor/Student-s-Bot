@@ -27,10 +27,10 @@ def Bot(bot):
             event = event[0].object
             print(Time + ' Обрабатываю событие\n'+ str(event))
             result = handler(event)
-            if result == 'OK':
-                Message.Send(event['from_id'], 'Завершено успешно', keyboard=VkKeyboard.get_empty_keyboard())
+            if result == 'OK' or result == 'Отмена':
+                Message.Send(event['from_id'], 'Завершено', keyboard=begin_keyboard)
             elif result == 'Ответ не получен':
-                Message.Send(event['from_id'], 'Время ожидания истекло', keyboard=VkKeyboard.get_empty_keyboard())
+                Message.Send(event['from_id'], 'Время ожидания истекло', keyboard=begin_keyboard)
                 print('Время ожидания истекло')
 
 
@@ -43,8 +43,9 @@ def handler(event):
     if peer_id != from_id:
         if 'action' in event and event['action']['type'] == 'chat_invite_user':
             Message.Send(peer_id, f'ID = {peer_id} \nЧтобы использовать бота в этой беседе, '
-                                   'впишите указанный ID в таблицу, соответственно имени беседы'
-                                   '(ссылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing )')
+                                   'впишите указанный ID в таблицу, соответственно имени беседы')
+            Message.Send(peer_id, 'Cсылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_'
+                                   '0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing')
             return None
         else:
             return 'Событие из беседы'
@@ -59,8 +60,6 @@ def handler(event):
     elif mode == 'Рассылка':
         result = mailing(peer_id) #  рассылка
         return result
-    elif mode == 'Отмена':
-        return 'OK'
 
 
 def get_mode(event):
@@ -81,8 +80,8 @@ def get_mode(event):
 
 
 def add_chat_or_user(peer_id):
-    options = ['Пользователь', 'Отмена']
-    keyboard = Keyboard.Make(options = options)
+    options = ['Пользователь']
+    keyboard = Keyboard.Make(options = options, options_after={'Отмена': 'negative'})
     Message.Send(peer_id, message='Кого (что) вы хотите добавить в базу данных бота?', keyboard=keyboard)
     while True:
         answer = Message.Get(peer_id)
@@ -100,10 +99,12 @@ def add_chat_or_user(peer_id):
 
 def add_user(peer_id):
     Message.Send(peer_id, 'Укажите ссылку на страницу пользователя',
-                 keyboard=VkKeyboard.get_empty_keyboard())
+                 keyboard=Keyboard.Make({'Отмена': 'negative'}))
     Message.Send(peer_id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
                           'разместите несколько ссылок (каждая на новой строке)')
     answer = Message.Get(peer_id)
+    if answer == 'Ответ не получен' or answer == 'Отмена':
+        return answer
     try:
         answer = answer.split('\n')
         for user in answer:

@@ -188,3 +188,4 @@ class Keyboard:
 
         return keyboard.get_keyboard()
 
+begin_keyboard = Keyboard.Make(options=['Начать'])
