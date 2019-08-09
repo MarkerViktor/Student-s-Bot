@@ -43,7 +43,8 @@ def handler(event):
     if peer_id != from_id:
         if 'action' in event and event['action']['type'] == 'chat_invite_user':
             Message.Send(peer_id, f'ID = {peer_id} \nЧтобы использовать бота в этой беседе, '
-                                   'воспользуйтесь функцией "Добавить беседу в БД"')
+                                   'впишите указанный ID в таблицу, соответственно имени беседы'
+                                   '(ссылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing )')
             return None
         else:
             return 'Событие из беседы'
