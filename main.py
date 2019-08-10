@@ -1,154 +1,96 @@
-import connect as connection  # подключение к базе данных и vk.api
-from func import *
-from classes import *
 import time
-##############################################################################
-# написать функцию проверки на фоновые и служебные ответы метода Message.Get #
-##############################################################################
-
-def bot_start():
-    global bot
-    try:
-        bot = connection.make()
-    except Exception:
-        time.sleep(5)
-        bot_start()
-    global Message
-    Message = Message(bot['vk'], bot['longpoll'])
-    global Database
-    Database = Database(bot['cursor'], bot['conn'])
-    Bot(bot)
+from config import *
+from classes import *
+import connect
 
 
-
-def Bot(bot):
+def Start():
+    global VK, DATABASE, USERS
+    VK, DATABASE = connect.make()
+    USERS = DATABASE.UsersUpdate()
+    print(USERS)
     while True:
-        Time = time.ctime(time.time())
-        event = bot['longpoll'].check()  # проверяем лонгпул на новое событие
-        if len(event) != 0:
-            event = event[0].object
-            print(Time + ' Обрабатываю событие\n'+ str(event))
-            result = handler(event)
-            if result == 'OK' or result == 'Отмена':
-                Message.Send(event['from_id'], 'Завершено', keyboard=begin_keyboard)
-            elif result == 'Ответ не получен':
-                Message.Send(event['from_id'], 'Время ожидания истекло', keyboard=begin_keyboard)
-                print('Время ожидания истекло')
-
-
-def handler(event):
-    """Функция главного обработчика событий бота"""
-    peer_id = event['peer_id']
-    from_id = event['from_id']
-
-
-    if peer_id != from_id:
-        if 'action' in event and event['action']['type'] == 'chat_invite_user':
-            Message.Send(peer_id, f'ID = {peer_id} \nЧтобы использовать бота в этой беседе, '
-                                   'впишите указанный ID в таблицу, соответственно имени беседы')
-            Message.Send(peer_id, 'Cсылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_'
-                                   '0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing')
-            return None
-        else:
-            return 'Событие из беседы'
-
-
-    mode = get_mode(event)
-    if mode == 'Ответ не получен':
-        return mode
-    elif mode == 'Добавить пользователя\беседу в БД':
-        result = add_chat_or_user(peer_id) #  добавление пользователя или чата в базу данных
-        return result
-    elif mode == 'Рассылка':
-        result = mailing(peer_id) #  рассылка
-        return result
-
-
-def get_mode(event):
-
-    peer_id = event['from_id']
-
-    options = ['Добавить пользователя\беседу в БД']
-    keyboard = Keyboard.Make(options = options, positive=['Рассылка'])
-    Message.Send(peer_id, 'Выберите функцию', keyboard=keyboard)
-    while True:
-        answer = Message.Get(peer_id)
-        if answer == 'Ответ не получен':
-            return answer
-        elif answer == 'Другое обращение':
+        event = VK.Listen(0)
+        id = event['from_id']
+        if id not in USERS:
+            other_users_handler(id)
             continue
-        elif answer not in options:
-            Message.Send(peer_id, 'Используйте кнопки')
+
+        VK.ExtraEventHandler(event)
+        try:
+            mode = Mode(id)
+            print(mode)
+            if mode == 'Добавить пользователя':
+                AddUser(id)
+            elif mode == 'Добавить беседу':
+                AddChat(id)
+            raise End
+        except End:
+            VK.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        except Timeout:
+            VK.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+
+
+def Mode(id):
+    keyboard, buttons = KeyboardMake(
+        options = {
+            'Добавить пользователя': 'default',
+            'Добавить беседу': 'default'
+        },
+        options_after={
+            'Завершить': 'negative'
+        }
+    )
+    VK.MessageSend(id, 'Выберите функцию', keyboard=keyboard)
+    while True:
+        answer = VK.MessageGet(id)
+        if answer not in buttons:
+            VK.MessageSend(id, 'Используйте кнопки')
         else:
             return answer
 
 
-def add_chat_or_user(peer_id):
-    options = ['Пользователь']
-    keyboard = Keyboard.Make(options = options, options_after={'Отмена': 'negative'})
-    Message.Send(peer_id, message='Кого (что) вы хотите добавить в базу данных бота?', keyboard=keyboard)
-    while True:
-        answer = Message.Get(peer_id)
-        print(answer)
-        if answer == 'Ответ не получен' or answer == 'Отмена':
-            return answer
-        elif answer == 'Другое обращение':
-            continue
-        elif answer not in options:
-            Message.Send(peer_id, 'Используйте кнопки')
-        elif answer == 'Пользователь':
-            result = add_user(peer_id)
-            return result
-        elif answer == 'Беседа':
-            result = add_chat(peer_id)
-            return result
-
-
-def add_user(peer_id):
-    Message.Send(peer_id, 'Укажите ссылку на страницу пользователя',
-                 keyboard=Keyboard.Make({'Отмена': 'negative'}))
-    Message.Send(peer_id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
+def AddUser(id):
+    VK.MessageSend(id, 'Укажите ссылку на страницу пользователя',
+                 keyboard=KeyboardMake({'Отмена': 'negative'})[0])
+    VK.MessageSend(id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
                           'разместите несколько ссылок (каждая на новой строке)')
 
-    answer = Message.Get(peer_id)
-    if answer == 'Ответ не получен' or answer == 'Отмена':
-        return answer
+    answer = VK.MessageGet(id)
+    if '.com/' in answer:
+        links = answer.split('\n')
+        for link in links:
+            try:
+                user = VK.UserGet(link)
+                name = user['full_name']
+                user_id = user['id']
+                DATABASE.DataAdd('users', {'name': name, 'id': user_id})
+                VK.MessageSend(id, f'{name} c ID = {user_id} успешно внесён в БД')
+            except Exception:
+                VK.MessageSend(id, 'Неверный формат входных данных, попробуйте снова')
+                continue
+        keyboard, buttons = KeyboardMake(
+            options_before={'Добавить': 'default'},
+            options_after={'Завершить': 'positive'}
+        )
+        VK.MessageSend(id, 'Добавить еще?', keyboard=keyboard)
+        answer = VK.MessageGet(id)
+        if answer == 'Добавить':
+            AddUser(id)
 
-    try:
-        answer = answer.split('\n')
-        for user in answer:
-            user = user.split('.com/')[1]
-            if user.startswith('id') and user.split('id')[1].isdigit():
-                id = user.split('id')[1]
-                user = bot['vk'].users.get(user_ids=user)[0]
-                user = user['first_name'] + ' ' + user['last_name']
-            else:
-                user = bot['vk'].users.get(user_ids=user)[0]
-                id = user['id']
-                user = user['first_name'] + ' ' + user['last_name']
-            Database.add_data('users', {'id': int(id)})
-            Message.Send(peer_id, user + ' c id = ' + str(id) + ' добавлен(а) в БД')
-        return 'OK'
-
-    except Exception:
-
-        Message.Send(peer_id, 'Неверная форма ответа')
-        return add_user(peer_id)
-
-
-def add_chat(peer_id):
-    pass
+    else:
+        VK.MessageSend(id, 'Неверный формат входных данных')
+        AddUser(id)
+    USERS = DATABASE.UsersUpdate()
 
 
-def mailing(peer_id):
-    return 'OK'
-bot_start()
+def AddChat(id):
+    VK.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
+    VK.MessageSend(id, '— Пригласите бота в беседу с помощью кнопки на стене сообщества бота')
+    VK.MessageSend(id, '— Следуйте указаниям бота в сообщении, пришедшем в беседу сразу после приглашения')
 
 
+def other_users_handler(id):
+    VK.MessageSend(id, 'Доступ запрещен ⛔', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
-
-
-
-
-
-
+Start()

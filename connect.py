@@ -1,26 +1,27 @@
 import vk_api
 import vk_api.bot_longpoll
+import time
 import psycopg2  # работа с базами данных
 from config import *  # данные для подключения к vk.api и базе данных heruko
+from classes import *
 
 
 def make():
     """Функция покдлючения к базе данных и авторизации vk_api
        Возвращает словарь с ключами vk, longpoll, cursor"""
     try:
-        cursor, conn = connect_database('heroku')
-    except Exception:
-        cursor, conn = connect_database()
-    except Exception:
-        print("\tBase can't be connected")
+        try:
+            cursor, conn = connect_database('heroku')
+        except Exception:
+            cursor, conn = connect_database()
 
-    try:
         vk, longpoll = connect_vk()
-        vk._method
-        print("\tVK is connected")
+        print("\tVK and Database is connected")
     except Exception:
-        print("\tVK can't be connected")
-    return {'vk': vk, 'longpoll': longpoll, 'cursor': cursor, 'conn': conn}
+        print("\tVK and Database can't be connected")
+        time.sleep(5)
+        return make()
+    return Vk(vk, longpoll), Database(cursor, conn)
 
 
 def connect_vk():
