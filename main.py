@@ -16,7 +16,8 @@ def Start():
             other_users_handler(id)
             continue
 
-        VK.ExtraEventHandler(event)
+        if VK.ExtraEventHandler(event):
+            continue
         try:
             mode = Mode(id)
             print(mode)
