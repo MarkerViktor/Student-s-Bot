@@ -79,6 +79,7 @@ def AddUser(id):
         if answer == 'Добавить':
             AddUser(id)
 
+
     else:
         VK.MessageSend(id, 'Неверный формат входных данных')
         AddUser(id)
