@@ -69,6 +69,7 @@ def AddUser(id):
             except Exception:
                 VK.MessageSend(id, 'Неверный формат входных данных, попробуйте снова')
                 continue
+        UsersUpdate()
         keyboard, buttons = KeyboardMake(
             options_before={'Добавить': 'default'},
             options_after={'Завершить': 'positive'}
@@ -81,7 +82,6 @@ def AddUser(id):
     else:
         VK.MessageSend(id, 'Неверный формат входных данных')
         AddUser(id)
-    UsersUpdate()
 
 def AddChat(id):
     VK.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
@@ -94,6 +94,7 @@ def other_users_handler(id):
 
 
 def UsersUpdate():
+    print('UsersUpdate')
     global USERS
     global DATABASE
     USERS = DATABASE.UsersUpdate()

@@ -162,6 +162,7 @@ class Database:
 
     def UsersUpdate(self, only_id=True):
         users = self.DataGet('users')
+        print(users)
         if only_id:
             return set(dict(users).keys())
         return dict(users)
@@ -275,8 +276,4 @@ def KeyboardMake(options_before: dict = {}, options: dict or list = {},
 
     return keyboard.get_keyboard(), buttons
 
-def UsersUpdate():
-    global USERS
-    global DATABASE
-    USERS = DATABESE.
 
