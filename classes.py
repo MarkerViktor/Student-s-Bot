@@ -1,26 +1,38 @@
 from random import *
 from vk_api.keyboard import VkKeyboard
 
+class Bot:
 
-class Vk:
-
-    def __init__(self, vk, longpoll):
+    def __init__(self, vk, longpoll, cursor, conn):
         self.vk = vk
         self.longpoll = longpoll
+        self.cursor = cursor
+        self.conn = conn
 
     def MessageSend(self, id, message, attachments='', keyboard=''):
-        self.vk.messages.send(
-            peer_id = id,
-            message = message,
-            attachment = ','.join(attachments),
-            keyboard = keyboard,
-            random_id = randint(0, 9223372036854775807)
-        )
+        try:
+            self.vk.messages.send(
+                peer_id = id,
+                message = message,
+                attachment = ','.join(attachments),
+                keyboard = keyboard,
+                random_id = randint(0, 9223372036854775807)
+            )
+        except Exception:
+            print('MessageSend Error')
 
-    def MessageGet(self, id, only_text=True):
+    def AnswerGet(self, id, only_text=True):
         event = self.Listen()
-        if self.ExtraEventHandler(event, id):
-            return self.MessageGet(id, only_text)
+
+        if self.UserVerification(event):
+            return self.AnswerGet(id, only_text)
+
+        if self.ExtraEventHandler(event):
+            return self.AnswerGet(id, only_text)
+
+        if self.UserCheck(event, id):
+            return self.AnswerGet(id, only_text)
+
         if only_text:
             text = event['text']
             if text == 'Отмена' or text == 'Завершить':
@@ -73,13 +85,17 @@ class Vk:
         person.pop('can_access_closed')
         return person
 
+    #event
     def Listen(self, quantity=5):
         if quantity != 0:
             for a in range(quantity):
                 event = self.longpoll.check()
                 if len(event) != 0:
-                    print(event[0].object)
-                    return event[0].object
+                    event = event[0].object
+
+
+                    print(event)
+                    return event
             raise Timeout
         else:
             while True:
@@ -88,7 +104,7 @@ class Vk:
                     print(event)
                     return event
 
-    def ExtraEventHandler(self, event, id=''):
+    def ExtraEventHandler(self, event):
         peer_id = event['peer_id']
         from_id = event['from_id']
         if peer_id != from_id:
@@ -99,19 +115,26 @@ class Vk:
                 self.MessageSend(peer_id, 'Cсылка на таблицу: https://docs.google.com/spreadsheets/d/1CB53Wri_'
                                       '0WXksMg5aRusTEfKIxzxALbt3nXarpfo8QQ/edit?usp=sharing')
             return True
-        if id != '':
-            if peer_id != id:
-                self.MessageSend(peer_id, 'Бот сейчас занят, обратись попозже)')
-                return True
         return False
 
+    def UserVerification(self, event):
+        id = event['from_id']
+        user = self.DataGet('users', select_type='id', select_data=id)
+        if len(user) == 0:
+            self.OtherUserHandler(event)
+            return True
+        else:
+            return False
 
-class Database:
+    def UserCheck(self, event, id):
+        peer_id = event['peer_id']
+        from_id = event['from_id']
+        if peer_id != id and from_id != id:
+            self.MessageSend(from_id, 'Бот сейчас занят, обратись позже)')
+            return True
+        return False
 
-    def __init__(self, cursor, conn):
-        self.cursor = cursor
-        self.conn = conn
-
+    #database
     def DataGet(self, table_name, sort='', select_type='', select_data=''):
 
         """Получение данных из БД"""
@@ -124,17 +147,20 @@ class Database:
         if select_data and select_type != '':
             request += f'WHERE {select_type} = '
             if isinstance(select_data, int):
-                request += f'{select_data} '
+                request += f'{select_data}'
             elif isinstance(select_data, str):
-                request += f"'{select_data}' "
+                request += f"'{select_data}'"
         if sort != '':
             request += f'ORDER BY {sort};'
+        else:
+            request += ';'
         print(request)
         try:
             self.cursor.execute(request)
             data = self.cursor.fetchall()
             return data
-        except Exception:
+        except Exception as f:
+            print(f)
             return 'Error'
 
     def DataAdd(self, table_name, data):
@@ -160,57 +186,10 @@ class Database:
         except Exception:
             return 'Error'
 
-    def UsersUpdate(self, only_id=True):
-        users = self.DataGet('users')
-        print(users)
-        if only_id:
-            return set(dict(users).keys())
-        return dict(users)
-
-
-class Keyboard:
-    def Make(options_before: dict = [],
-                    options: list = [],
-              options_after: dict = {},
-            options_columns: int  = 1,
-                    primary: list = [],
-                   negative: list = [],
-                   positive: list = []):
-
-        keyboard = VkKeyboard()
-
-        # добавление options_before
-        if len(options_before) != 0:
-            for option, color in options_before.items():
-                keyboard.add_button(option, color)
-
-        # добавление options
-        if len(options)!=0:
-            if len(options_before) != 0:
-                keyboard.add_line()
-            number = 0
-            for option in options:
-                if number%options_columns==0 and number !=0:
-                    keyboard.add_line()
-                if option in primary:
-                    keyboard.add_button(option, 'primary')
-                elif option in negative:
-                    keyboard.add_button(option, 'negative')
-                elif option in positive:
-                    keyboard.add_button(option, 'positive')
-                else:
-                    keyboard.add_button(option, 'default')
-                number += 1
-
-        # добавление options_after
-        if len(options_after) != 0:
-            if len(options) != 0:
-                keyboard.add_line()
-            for option, color in options_after.items():
-                keyboard.add_button(option, color)
-
-        return keyboard.get_keyboard()
-
+    # other user handler
+    def OtherUserHandler(self, event):
+        id = event['from_id']
+        self.MessageSend(id, 'Нет доступа ⛔')
 
 class Timeout(Exception):
     def __init__(self):

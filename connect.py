@@ -3,7 +3,7 @@ import vk_api.bot_longpoll
 import time
 import psycopg2  # работа с базами данных
 from config import *  # данные для подключения к vk.api и базе данных heruko
-from classes import *
+from classes import Bot
 
 
 def make():
@@ -21,7 +21,8 @@ def make():
         print("\tVK and Database can't be connected")
         time.sleep(5)
         return make()
-    return Vk(vk, longpoll), Database(cursor, conn)
+    bot = Bot(vk, longpoll, cursor, conn)
+    return bot
 
 
 def connect_vk():
