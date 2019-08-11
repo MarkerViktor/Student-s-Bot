@@ -15,7 +15,7 @@ class Vk:
             attachment = ','.join(attachments),
             keyboard = keyboard,
             random_id = randint(0, 9223372036854775807)
-        ) ##
+        )
 
     def MessageGet(self, id, only_text=True):
         event = self.Listen()
@@ -85,8 +85,8 @@ class Vk:
             while True:
                 event = self.longpoll.check()
                 if len(event) != 0:
-                    print(event[0].object)
-                    return event[0].object
+                    print(event)
+                    return event
 
     def ExtraEventHandler(self, event, id=''):
         peer_id = event['peer_id']

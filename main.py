@@ -10,26 +10,28 @@ def Start():
     USERS = DATABASE.UsersUpdate()
     print(USERS)
     while True:
-        event = VK.Listen(0)
-        id = event['from_id']
-        if id not in USERS:
-            other_users_handler(id)
-            continue
+        events = VK.Listen(0)
+        for event in events:
+            event = event.object
+            id = event['from_id']
+            if id not in USERS:
+                other_users_handler(id)
+                continue
 
-        if VK.ExtraEventHandler(event):
-            continue
-        try:
-            mode = Mode(id)
-            print(mode)
-            if mode == 'Добавить пользователя':
-                AddUser(id)
-            elif mode == 'Добавить беседу':
-                AddChat(id)
-            raise End
-        except End:
-            VK.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        except Timeout:
-            VK.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+            if VK.ExtraEventHandler(event):
+                continue
+            try:
+                mode = Mode(id)
+                print(mode)
+                if mode == 'Добавить пользователя':
+                    AddUser(id)
+                elif mode == 'Добавить беседу':
+                    AddChat(id)
+                raise End
+            except End:
+                VK.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+            except Timeout:
+                VK.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
 
 def Mode(id):
@@ -83,6 +85,7 @@ def AddUser(id):
     else:
         VK.MessageSend(id, 'Неверный формат входных данных')
         AddUser(id)
+
 
 def AddChat(id):
     VK.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
