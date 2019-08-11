@@ -275,4 +275,8 @@ def KeyboardMake(options_before: dict = {}, options: dict or list = {},
 
     return keyboard.get_keyboard(), buttons
 
+def UsersUpdate():
+    global USERS
+    global DATABASE
+    USERS = DATABESE.
 

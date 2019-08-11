@@ -56,7 +56,6 @@ def AddUser(id):
                  keyboard=KeyboardMake({'Отмена': 'negative'})[0])
     VK.MessageSend(id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
                           'разместите несколько ссылок (каждая на новой строке)')
-
     answer = VK.MessageGet(id)
     if '.com/' in answer:
         links = answer.split('\n')
@@ -82,8 +81,7 @@ def AddUser(id):
     else:
         VK.MessageSend(id, 'Неверный формат входных данных')
         AddUser(id)
-    USERS = DATABASE.UsersUpdate()
-
+    UsersUpdate()
 
 def AddChat(id):
     VK.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
@@ -93,5 +91,11 @@ def AddChat(id):
 
 def other_users_handler(id):
     VK.MessageSend(id, 'Доступ запрещен ⛔', keyboard=KeyboardMake({'Начать': 'default'})[0])
+
+
+def UsersUpdate():
+    global USERS
+    global DATABASE
+    USERS = DATABASE.UsersUpdate()
 
 Start()
