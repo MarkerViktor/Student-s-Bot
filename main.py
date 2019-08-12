@@ -23,7 +23,7 @@ def Start():
                 print(mode)
                 if mode == 'Управление':
                     control = Control(id)
-                    if control == 'Управление':
+                    if control == 'Добавить пользователя':
                         AddUser(id)
                     elif control == 'Добавить беседу':
                         AddChat(id)
@@ -43,7 +43,7 @@ def Mode(id):
             'Завершить': 'negative'
         }
     )
-    BOT.MessageSend(id, 'Выберите функцию', keyboard=keyboard)
+    BOT.MessageSend(id, 'Выберите раздел', keyboard=keyboard)
     while True:
         answer = BOT.AnswerGet(id)
         if answer not in buttons:
@@ -55,7 +55,7 @@ def Mode(id):
 def Control(id):
     keyboard, buttons = KeyboardMake(
         options = {
-            'Показать список разрешенных пользователей': 'default',
+            'Список разрешенных пользователей': 'default',
             'Добавить пользователя': 'default',
             'Добавить беседу': 'default'
         },
