@@ -58,9 +58,9 @@ def Mode(id):
 def Control(id):
     keyboard, buttons = KeyboardMake(
         options = {
-            'Список разрешенных пользователей': 'default',
-            'Добавить пользователя': 'default',
-            'Добавить беседу': 'default'
+            'Добавить пользователя': 'primary',
+            'Добавить беседу': 'primary',
+            'Список разрешенных пользователей': 'default'
         },
         options_after={
             'Завершить': 'negative'
