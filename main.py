@@ -116,11 +116,12 @@ def AddChat(id):
 
 
 def UsersList(id):
-    users = dict(BOT.DataGet('users', 'name'))
-    BOT.MessageSend(
-        id,
-        message='Разрешенные пользователи:\n— ' + '\n—'.join(users.values())
-    )
+    users = dict(BOT.DataGet('users', 'name')).values()
+    users_list = ''
+    for number in range(len(users)):
+        users_list += f'{number+1} — {users[number]}\n'
+
+    BOT.MessageSend(id, 'Разрешенные пользователи:\n' + users_list)
 
 
 Start()
