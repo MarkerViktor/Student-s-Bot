@@ -119,7 +119,7 @@ def UsersList(id):
     users = dict(BOT.DataGet('users', 'name'))
     BOT.MessageSend(
         id,
-        message='Разрешенные пользователи:\n— ' + '\n—'.join(users.keys())
+        message='Разрешенные пользователи:\n— ' + '\n—'.join(users.values())
     )
 
 
