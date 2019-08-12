@@ -10,8 +10,15 @@ class Bot:
         self.conn = conn
 
     def MessageSend(self, id, message, attachments='', keyboard=''):
+        """
+        :param id:
+        :param message:
+        :param attachments:
+        :param keyboard:
+        :return:
+        """
         try:
-            self.vk.messages.send(
+            return self.vk.messages.send(
                 peer_id = id,
                 message = message,
                 attachment = ','.join(attachments),
@@ -22,6 +29,11 @@ class Bot:
             print('MessageSend Error')
 
     def AnswerGet(self, id, only_text=True):
+        """
+        :param id:
+        :param only_text:
+        :return:
+        """
         event = self.Listen()
 
         if self.UserVerification(event):
@@ -45,6 +57,10 @@ class Bot:
         return {'text': text, 'attachments': attachments}
 
     def AttachmentsGet(self, attachments):
+        """
+        :param attachments:
+        :return:
+        """
         if len(attachments) == 0:
             return []
         items = list()
@@ -61,6 +77,11 @@ class Bot:
         return items
 
     def UserGet(self, link='', id_or_screen_name=''):
+        """
+        :param link:
+        :param id_or_screen_name:
+        :return:
+        """
         """Метод получения объекта пользователя"""
         #  link — ссылка на страницу пользователя
         #  id_or_screen_name — id или ник пользователя
@@ -136,7 +157,13 @@ class Bot:
 
     #database
     def DataGet(self, table_name, sort='', select_type='', select_data=''):
-
+        """
+        :param table_name:
+        :param sort:
+        :param select_type:
+        :param select_data:
+        :return:
+        """
         """Получение данных из БД"""
         #         name — имя таблицы
         #         sort — имя столбца, по ктоторому производится сортировка

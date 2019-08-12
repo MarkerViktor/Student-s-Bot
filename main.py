@@ -27,6 +27,9 @@ def Start():
                         AddUser(id)
                     elif control == 'Добавить беседу':
                         AddChat(id)
+                    elif control == 'Список разрешенных пользователей':
+                        UsersList(id)
+
                 raise End
             except End:
                 BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
@@ -112,8 +115,12 @@ def AddChat(id):
     BOT.MessageSend(id, '— Следуйте указаниям бота в сообщении, пришедшем в беседу сразу после приглашения')
 
 
-def other_users_handler(id):
-    BOT.MessageSend(id, 'Доступ запрещен ⛔', keyboard=KeyboardMake({'Начать': 'default'})[0])
+def UsersList(id):
+    users = BOT.DataGet('users', 'name')
+    BOT.MessageSend(
+        id,
+        message='Разрешенные пользователи:\n— ' + '\n—'.join(users.keys())
+    )
 
 
 Start()
