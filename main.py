@@ -21,10 +21,12 @@ def Start():
             try:
                 mode = Mode(id)
                 print(mode)
-                if mode == 'Добавить пользователя':
-                    AddUser(id)
-                elif mode == 'Добавить беседу':
-                    AddChat(id)
+                if mode == 'Управление':
+                    control = Control(id)
+                    if control == 'Управление':
+                        AddUser(id)
+                    elif control == 'Добавить беседу':
+                        AddChat(id)
                 raise End
             except End:
                 BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
@@ -35,6 +37,25 @@ def Start():
 def Mode(id):
     keyboard, buttons = KeyboardMake(
         options = {
+            'Управление': 'default'
+        },
+        options_after={
+            'Завершить': 'negative'
+        }
+    )
+    BOT.MessageSend(id, 'Выберите функцию', keyboard=keyboard)
+    while True:
+        answer = BOT.AnswerGet(id)
+        if answer not in buttons:
+            BOT.MessageSend(id, 'Используйте кнопки')
+        else:
+            return answer
+
+
+def Control(id):
+    keyboard, buttons = KeyboardMake(
+        options = {
+            'Показать список разрешенных пользователей': 'default',
             'Добавить пользователя': 'default',
             'Добавить беседу': 'default'
         },
