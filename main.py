@@ -116,7 +116,7 @@ def AddChat(id):
 
 
 def UsersList(id):
-    users = dict(BOT.DataGet('users', 'name')).values()
+    users = list(dict(BOT.DataGet('users', 'name')).values())
     users_list = ''
     for number in range(len(users)):
         users_list += f'{number+1} — {users[number]}\n'
