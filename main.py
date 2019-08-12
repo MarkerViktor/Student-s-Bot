@@ -116,7 +116,7 @@ def AddChat(id):
 
 
 def UsersList(id):
-    users = BOT.DataGet('users', 'name')
+    users = dict(BOT.DataGet('users', 'name'))
     BOT.MessageSend(
         id,
         message='Разрешенные пользователи:\n— ' + '\n—'.join(users.keys())
