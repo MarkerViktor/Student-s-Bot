@@ -25,8 +25,8 @@ class Bot:
                 keyboard = keyboard,
                 random_id = randint(0, 9223372036854775807)
             )
-        except Exception:
-            print('MessageSend Error')
+        except Exception as x:
+            print('MessageSend Error', x)
 
     def AnswerGet(self, id, only_text=True):
         """

@@ -151,13 +151,13 @@ def Mailing(id):
         options={
             'Моментальная рассылка': 'primary',
             'Отложенная рассылка': 'primary',
-            'Редактировать/удалить': 'primary',
+            'Редактировать/удалить (last 24 h)': 'primary',
         },
         options_after={
             'Завершить': 'negative'
         }
     )
-    BOT.MessageSend(id, '', keyboard=keyboard)
+    BOT.MessageSend(id, 'Выберите функцию', keyboard=keyboard)
     while True:
         answer = BOT.AnswerGet(id)
         if answer not in buttons:
