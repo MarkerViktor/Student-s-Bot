@@ -19,27 +19,42 @@ def Start():
             if BOT.ExtraEventHandler(event):
                 continue
             try:
-                mode = Mode(id)
-                print(mode)
-                if mode == 'Управление':
-                    control = Control(id)
-                    if control == 'Добавить пользователя':
-                        AddUser(id)
-                    elif control == 'Добавить беседу':
-                        AddChat(id)
-                    elif control == 'Список разрешенных пользователей':
-                        UsersList(id)
-
-                raise End
+                GeneralHandler(id)
             except End:
                 BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
             except Timeout:
                 BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
 
+
+def GeneralHandler(id):
+    mode = Mode(id)
+    print(mode)
+    if mode == 'Управление':
+        control = Control(id)
+        print(control)
+        if control == 'Добавить пользователя':
+            AddUser(id)
+        elif control == 'Добавить беседу':
+            AddChat(id)
+        elif control == 'Список разрешенных пользователей':
+            UsersList(id)
+    elif mode == 'Рассылка':
+        mailing = Mailing(id)
+        if mailing == 'Моментальная рассылка':
+            pass
+        elif mailing == 'Отложенная рассылка':
+            pass
+        elif mailing == '3 последних рассылки (редактировать или удалить)':
+            pass
+    raise End
+
+
 def Mode(id):
+    # Главное меню
     keyboard, buttons = KeyboardMake(
         options = {
+            'Рассылка': 'default',
             'Управление': 'default'
         },
         options_after={
@@ -55,7 +70,9 @@ def Mode(id):
             return answer
 
 
+
 def Control(id):
+    # Управление
     keyboard, buttons = KeyboardMake(
         options = {
             'Добавить пользователя': 'primary',
@@ -72,10 +89,11 @@ def Control(id):
         if answer not in buttons:
             BOT.MessageSend(id, 'Используйте кнопки')
         else:
-            return answer
+            return answer ## #
 
 
 def AddUser(id):
+    # Добавление пользователя
     BOT.MessageSend(id, 'Укажите ссылку на страницу пользователя',
                  keyboard=KeyboardMake({'Отмена': 'negative'})[0])
     BOT.MessageSend(id, 'Чтобы одновременно добавить нескольких пользователей, в одном сообщении '
@@ -109,19 +127,45 @@ def AddUser(id):
         AddUser(id)
 
 
-def AddChat(id):
-    BOT.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
-    BOT.MessageSend(id, '— Пригласите бота в беседу с помощью кнопки на стене сообщества бота')
-    BOT.MessageSend(id, '— Следуйте указаниям бота в сообщении, пришедшем в беседу сразу после приглашения')
-
-
 def UsersList(id):
+    # Показать список разрешенных пользователей
     users = list(dict(BOT.DataGet('users', 'name')).values())
     users_list = ''
     for number in range(len(users)):
         users_list += f'{number+1} — {users[number]}\n'
 
     BOT.MessageSend(id, 'Разрешенные пользователи:\n' + users_list)
+
+
+def AddChat(id):
+    # Добавление беседы
+    BOT.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
+    BOT.MessageSend(id, '— Пригласите бота в беседу с помощью кнопки на стене сообщества бота')
+    BOT.MessageSend(id, '— Следуйте указаниям бота в сообщении, пришедшем в беседу сразу после приглашения')
+
+
+
+def Mailing(id):
+    # Рассылка
+    keyboard, buttons = KeyboardMake(
+        options={
+            'Моментальная рассылка': 'primary',
+            'Отложенная рассылка': 'primary',
+            'Редактировать (рассылки за последние сутки)': 'primary',
+            'Удалить (рассылки за последние сутки)': 'primary'
+        },
+        options_after={
+            'Завершить': 'negative'
+        }
+    )
+    BOT.MessageSend(id, '', keyboard=keyboard)
+    while True:
+        answer = BOT.AnswerGet(id)
+        if answer not in buttons:
+            BOT.MessageSend(id, 'Выбериите функцию')
+        else:
+            return answer  ## #
+    pass
 
 
 Start()
