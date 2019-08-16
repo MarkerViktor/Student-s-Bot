@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,8 +138,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+            <state relative-caret-position="364">
+              <caret line="154" column="39" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
               <folding>
                 <element signature="e#89#1255#0" />
                 <element signature="e#149#1255#0" />
@@ -164,7 +163,6 @@
                 <element signature="e#3576#3649#0" />
                 <element signature="e#3884#4123#0" />
                 <element signature="e#4209#4502#0" />
-                <element signature="e#4530#4549#0" />
               </folding>
             </state>
           </provider>
@@ -282,20 +280,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Student-s-Bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Student-s-Bot" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -478,21 +463,7 @@
       <workItem from="1565696464128" duration="172000" />
       <workItem from="1565776962440" duration="99000" />
       <workItem from="1565850391825" duration="900000" />
-      <workItem from="1565951711055" duration="1199000" />
-    </task>
-    <task id="LOCAL-00004" summary="git login">
-      <created>1562441930923</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1562441930923</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Обновление">
-      <created>1562442017001</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1562442017001</updated>
+      <workItem from="1565951711055" duration="1513000" />
     </task>
     <task id="LOCAL-00006" summary="Обновление">
       <created>1562442078851</created>
@@ -823,11 +794,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565605335433</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Обновление">
+      <created>1565952915617</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1565952915618</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Обновление">
+      <created>1565953201513</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1565953201513</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105265000" />
+    <option name="totallyTimeSpent" value="105579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1200,8 +1185,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+        <state relative-caret-position="364">
+          <caret line="154" column="39" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
           <folding>
             <element signature="e#89#1255#0" />
             <element signature="e#149#1255#0" />
@@ -1225,7 +1210,6 @@
             <element signature="e#3576#3649#0" />
             <element signature="e#3884#4123#0" />
             <element signature="e#4209#4502#0" />
-            <element signature="e#4530#4549#0" />
           </folding>
         </state>
       </provider>

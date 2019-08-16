@@ -45,7 +45,7 @@ def GeneralHandler(id):
             pass
         elif mailing == 'Отложенная рассылка':
             pass
-        elif mailing == '3 последних рассылки (редактировать или удалить)':
+        elif mailing == 'Редактировать/удалить':
             pass
     raise End
 
@@ -151,8 +151,7 @@ def Mailing(id):
         options={
             'Моментальная рассылка': 'primary',
             'Отложенная рассылка': 'primary',
-            'Редактировать (рассылки за 24 ч.)': 'primary',
-            'Удалить (рассылки за 24 ч.)': 'primary'
+            'Редактировать/удалить': 'primary',
         },
         options_after={
             'Завершить': 'negative'
