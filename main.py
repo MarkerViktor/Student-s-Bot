@@ -44,6 +44,7 @@ def GeneralHandler(id):
                 pass
             elif mailing == 'Редактировать/удалить':
                 pass
+
         BOT.AddLog(id, mode, True)
         raise End
 
@@ -52,9 +53,17 @@ def GeneralHandler(id):
 
     except Timeout:
         BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        try:
+            BOT.AddLog(id, mode, False)
+        except Exception:
+            BOT.AddLog(id, 'None', False)
 
     except Exception:
         BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        try:
+            BOT.AddLog(id, mode, False)
+        except Exception:
+            BOT.AddLog(id, 'None', False)
 
 
 def Mode(id):
