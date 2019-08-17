@@ -48,24 +48,26 @@ def GeneralHandler(id):
     except End:
         try:
             BOT.AddLog(id, mode, True)
+            BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
         except Exception:
             BOT.AddLog(id, 'None', True)
-        BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+            BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
     except Timeout:
         try:
             BOT.AddLog(id, mode, False)
+            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
         except Exception:
             BOT.AddLog(id, 'None', False)
-        BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
     except Exception:
         try:
             BOT.AddLog(id, mode, False)
+            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
         except Exception:
             BOT.AddLog(id, 'None', False)
-
-
+            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
 
 def Mode(id):

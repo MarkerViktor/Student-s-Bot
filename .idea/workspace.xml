@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="Обновление">
+    <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,11 +158,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+            <state relative-caret-position="487">
+              <caret line="66" column="106" selection-start-line="66" selection-start-column="106" selection-end-line="66" selection-end-column="106" />
               <folding>
                 <element signature="e#350#402#0" />
                 <element signature="e#886#1154#0" />
@@ -185,10 +184,9 @@
                 <element signature="e#3754#3827#0" />
                 <element signature="e#3853#4140#0" />
                 <element signature="e#4164#4457#0" />
-                <element signature="e#4482#5045#0" />
+                <element signature="e#4923#5491#0" />
                 <element signature="e#4547#4712#0" />
                 <element signature="e#4736#4783#0" />
-                <element signature="e#4877#5036#0" />
               </folding>
             </state>
           </provider>
@@ -205,7 +203,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/logs">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state projectRestartId="7c9eff31-42ce-4dc1-b1ef-5e9e7fc6933b">
@@ -286,8 +284,8 @@
         <option value="$PROJECT_DIR$/connect.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/classes.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -491,21 +489,7 @@
       <workItem from="1565850391825" duration="900000" />
       <workItem from="1565951711055" duration="1513000" />
       <workItem from="1565956759727" duration="1256000" />
-      <workItem from="1566029398974" duration="3210000" />
-    </task>
-    <task id="LOCAL-00008" summary="Обновление">
-      <created>1562448276152</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1562448276152</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Обновление">
-      <created>1562448479985</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1562448479985</updated>
+      <workItem from="1566029398974" duration="3493000" />
     </task>
     <task id="LOCAL-00010" summary="Обновление">
       <created>1562481025105</created>
@@ -836,11 +820,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565957400865</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Обновление">
+      <created>1566035056005</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1566035056006</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Обновление">
+      <created>1566035136643</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1566035136643</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110045000" />
+    <option name="totallyTimeSpent" value="110328000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,7 +944,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Student_s_Bot$connect.coverage" NAME="connect Coverage Results" MODIFIED="1562476442486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Students_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564427189274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566034807292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566035131688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$new_func.coverage" NAME="new_func Coverage Results" MODIFIED="1565291332273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$test.coverage" NAME="test Coverage Results" MODIFIED="1564420842604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$main_2.coverage" NAME="main_2 Coverage Results" MODIFIED="1565472957735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1148,39 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding>
-            <element signature="e#350#402#0" />
-            <element signature="e#886#1154#0" />
-            <element signature="e#1192#1407#0" />
-            <element signature="e#1442#1913#0" />
-            <element signature="e#1513#1595#0" />
-            <element signature="e#1619#1666#0" />
-            <element signature="e#1759#1913#0" />
-            <element signature="e#1938#2490#0" />
-            <element signature="e#2007#2166#0" />
-            <element signature="e#2190#2237#0" />
-            <element signature="e#2331#2490#0" />
-            <element signature="e#2514#3827#0" />
-            <element signature="e#2698#2853#0" />
-            <element signature="e#2920#3733#0" />
-            <element signature="e#2986#3404#0" />
-            <element signature="e#3007#3261#0" />
-            <element signature="e#3308#3404#0" />
-            <element signature="e#3754#3827#0" />
-            <element signature="e#3853#4140#0" />
-            <element signature="e#4164#4457#0" />
-            <element signature="e#4482#5045#0" />
-            <element signature="e#4547#4712#0" />
-            <element signature="e#4736#4783#0" />
-            <element signature="e#4877#5036#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1260,6 +1225,38 @@
           <column-attributes>
             <column name="ctid" enabled="false" position="-1" />
           </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="66" column="106" selection-start-line="66" selection-start-column="106" selection-end-line="66" selection-end-column="106" />
+          <folding>
+            <element signature="e#350#402#0" />
+            <element signature="e#886#1154#0" />
+            <element signature="e#1192#1407#0" />
+            <element signature="e#1442#1913#0" />
+            <element signature="e#1513#1595#0" />
+            <element signature="e#1619#1666#0" />
+            <element signature="e#1759#1913#0" />
+            <element signature="e#1938#2490#0" />
+            <element signature="e#2007#2166#0" />
+            <element signature="e#2190#2237#0" />
+            <element signature="e#2331#2490#0" />
+            <element signature="e#2514#3827#0" />
+            <element signature="e#2698#2853#0" />
+            <element signature="e#2920#3733#0" />
+            <element signature="e#2986#3404#0" />
+            <element signature="e#3007#3261#0" />
+            <element signature="e#3308#3404#0" />
+            <element signature="e#3754#3827#0" />
+            <element signature="e#3853#4140#0" />
+            <element signature="e#4164#4457#0" />
+            <element signature="e#4923#5491#0" />
+            <element signature="e#4547#4712#0" />
+            <element signature="e#4736#4783#0" />
+          </folding>
         </state>
       </provider>
     </entry>
