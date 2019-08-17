@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,15 +90,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="231" column="12" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
+            <state relative-caret-position="391">
+              <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
               <folding>
-                <element signature="e#77#7345#0" />
                 <element signature="e#133#232#0" />
                 <element signature="e#311#795#0" />
                 <element signature="e#311#439#1" />
                 <element signature="e#465#722#0" />
-                <element signature="e#850#1615#0" />
                 <element signature="e#850#927#1" />
                 <element signature="e#1264#1390#0" />
                 <element signature="e#1668#2278#0" />
@@ -130,29 +129,15 @@
                 <element signature="e#5227#6291#0" />
                 <element signature="e#5227#5363#1" />
                 <element signature="e#5409#5437#0" />
-                <element signature="e#0#27#1" />
                 <element signature="e#5744#5962#0" />
                 <element signature="e#6118#6212#0" />
                 <element signature="e#6256#6291#0" />
                 <element signature="e#6342#7052#0" />
-                <element signature="e#0#27#1" />
                 <element signature="e#6639#6797#0" />
                 <element signature="e#6916#6999#0" />
                 <element signature="e#7126#7193#0" />
-                <element signature="e#7254#7403#0" />
-                <element signature="e#7225#7269#0" />
-                <element signature="e#7253#7269#0" />
                 <element signature="e#7498#7530#0" />
                 <element signature="e#7526#7530#0" />
-                <element signature="e#7490#9552#0" />
-                <element signature="e#7545#7640#0" />
-                <element signature="e#8144#8280#0" />
-                <element signature="e#8405#8642#0" />
-                <element signature="e#8461#8642#0" />
-                <element signature="e#8701#9136#0" />
-                <element signature="e#8838#9136#0" />
-                <element signature="e#9209#9507#0" />
-                <element signature="e#9326#9507#0" />
               </folding>
             </state>
           </provider>
@@ -161,33 +146,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="66" column="106" selection-start-line="66" selection-start-column="106" selection-end-line="66" selection-end-column="106" />
-              <folding>
-                <element signature="e#350#402#0" />
-                <element signature="e#886#1154#0" />
-                <element signature="e#1192#1407#0" />
-                <element signature="e#1442#1913#0" />
-                <element signature="e#1513#1595#0" />
-                <element signature="e#1619#1666#0" />
-                <element signature="e#1759#1913#0" />
-                <element signature="e#1938#2490#0" />
-                <element signature="e#2007#2166#0" />
-                <element signature="e#2190#2237#0" />
-                <element signature="e#2331#2490#0" />
-                <element signature="e#2514#3827#0" />
-                <element signature="e#2698#2853#0" />
-                <element signature="e#2920#3733#0" />
-                <element signature="e#2986#3404#0" />
-                <element signature="e#3007#3261#0" />
-                <element signature="e#3308#3404#0" />
-                <element signature="e#3754#3827#0" />
-                <element signature="e#3853#4140#0" />
-                <element signature="e#4164#4457#0" />
-                <element signature="e#4923#5491#0" />
-                <element signature="e#4547#4712#0" />
-                <element signature="e#4736#4783#0" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -195,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="7c9eff31-42ce-4dc1-b1ef-5e9e7fc6933b">
+            <state projectRestartId="77a73672-4dee-46d9-a699-83687f89ca36">
               <filtering>
                 <filter text="" />
               </filtering>
@@ -206,13 +166,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/logs">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="7c9eff31-42ce-4dc1-b1ef-5e9e7fc6933b">
+            <state projectRestartId="77a73672-4dee-46d9-a699-83687f89ca36">
               <filtering>
                 <filter text="" />
               </filtering>
-              <column-attributes>
-                <column name="ctid" enabled="false" position="-1" />
-              </column-attributes>
             </state>
           </provider>
         </entry>
@@ -489,21 +446,8 @@
       <workItem from="1565850391825" duration="900000" />
       <workItem from="1565951711055" duration="1513000" />
       <workItem from="1565956759727" duration="1256000" />
-      <workItem from="1566029398974" duration="3493000" />
-    </task>
-    <task id="LOCAL-00010" summary="Обновление">
-      <created>1562481025105</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1562481025105</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Обновление">
-      <created>1562481529113</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1562481529113</updated>
+      <workItem from="1566029398974" duration="3717000" />
+      <workItem from="1566051438276" duration="252000" />
     </task>
     <task id="LOCAL-00012" summary="Обновление">
       <created>1562481558762</created>
@@ -834,11 +778,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566035136643</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Обновление">
+      <created>1566035338918</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1566035338918</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Обновление">
+      <created>1566035453211</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1566035453211</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110328000" />
+    <option name="totallyTimeSpent" value="110804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,7 +816,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.2594655" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" weight="0.2594655" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -944,7 +902,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Student_s_Bot$connect.coverage" NAME="connect Coverage Results" MODIFIED="1562476442486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Students_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564427189274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566035380288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566035456249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$new_func.coverage" NAME="new_func Coverage Results" MODIFIED="1565291332273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$test.coverage" NAME="test Coverage Results" MODIFIED="1564420842604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$main_2.coverage" NAME="main_2 Coverage Results" MODIFIED="1565472957735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1113,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/sequence/logs_number_seq">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1139,24 +1090,38 @@
     </entry>
     <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7c9eff31-42ce-4dc1-b1ef-5e9e7fc6933b">
+        <state projectRestartId="77a73672-4dee-46d9-a699-83687f89ca36">
           <filtering>
             <filter text="" />
           </filtering>
         </state>
       </provider>
     </entry>
+    <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/logs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="77a73672-4dee-46d9-a699-83687f89ca36">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="231" column="12" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
+        <state relative-caret-position="391">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
           <folding>
-            <element signature="e#77#7345#0" />
             <element signature="e#133#232#0" />
             <element signature="e#311#795#0" />
             <element signature="e#311#439#1" />
             <element signature="e#465#722#0" />
-            <element signature="e#850#1615#0" />
             <element signature="e#850#927#1" />
             <element signature="e#1264#1390#0" />
             <element signature="e#1668#2278#0" />
@@ -1189,74 +1154,23 @@
             <element signature="e#5227#6291#0" />
             <element signature="e#5227#5363#1" />
             <element signature="e#5409#5437#0" />
-            <element signature="e#0#27#1" />
             <element signature="e#5744#5962#0" />
             <element signature="e#6118#6212#0" />
             <element signature="e#6256#6291#0" />
             <element signature="e#6342#7052#0" />
-            <element signature="e#0#27#1" />
             <element signature="e#6639#6797#0" />
             <element signature="e#6916#6999#0" />
             <element signature="e#7126#7193#0" />
-            <element signature="e#7254#7403#0" />
-            <element signature="e#7225#7269#0" />
-            <element signature="e#7253#7269#0" />
             <element signature="e#7498#7530#0" />
             <element signature="e#7526#7530#0" />
-            <element signature="e#7490#9552#0" />
-            <element signature="e#7545#7640#0" />
-            <element signature="e#8144#8280#0" />
-            <element signature="e#8405#8642#0" />
-            <element signature="e#8461#8642#0" />
-            <element signature="e#8701#9136#0" />
-            <element signature="e#8838#9136#0" />
-            <element signature="e#9209#9507#0" />
-            <element signature="e#9326#9507#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/logs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7c9eff31-42ce-4dc1-b1ef-5e9e7fc6933b">
-          <filtering>
-            <filter text="" />
-          </filtering>
-          <column-attributes>
-            <column name="ctid" enabled="false" position="-1" />
-          </column-attributes>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="66" column="106" selection-start-line="66" selection-start-column="106" selection-end-line="66" selection-end-column="106" />
-          <folding>
-            <element signature="e#350#402#0" />
-            <element signature="e#886#1154#0" />
-            <element signature="e#1192#1407#0" />
-            <element signature="e#1442#1913#0" />
-            <element signature="e#1513#1595#0" />
-            <element signature="e#1619#1666#0" />
-            <element signature="e#1759#1913#0" />
-            <element signature="e#1938#2490#0" />
-            <element signature="e#2007#2166#0" />
-            <element signature="e#2190#2237#0" />
-            <element signature="e#2331#2490#0" />
-            <element signature="e#2514#3827#0" />
-            <element signature="e#2698#2853#0" />
-            <element signature="e#2920#3733#0" />
-            <element signature="e#2986#3404#0" />
-            <element signature="e#3007#3261#0" />
-            <element signature="e#3308#3404#0" />
-            <element signature="e#3754#3827#0" />
-            <element signature="e#3853#4140#0" />
-            <element signature="e#4164#4457#0" />
-            <element signature="e#4923#5491#0" />
-            <element signature="e#4547#4712#0" />
-            <element signature="e#4736#4783#0" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>

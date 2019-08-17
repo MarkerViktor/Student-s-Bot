@@ -3,7 +3,7 @@ from config import *
 from classes import *
 import connect
 
-
+#  изменить механику работы выхода из программы и добавления логов
 def Start():
     global BOT
     BOT = connect.make()
@@ -35,6 +35,7 @@ def GeneralHandler(id):
                 AddChat(id)
             elif control == 'Список разрешенных пользователей':
                 UsersList(id)
+
         elif mode == 'Рассылка':
             mailing = Mailing(id)
             if mailing == 'Моментальная рассылка':
@@ -43,31 +44,19 @@ def GeneralHandler(id):
                 pass
             elif mailing == 'Редактировать/удалить':
                 pass
+            elif mailing == 'Завершить':
+                pass
         BOT.AddLog(id, mode, True)
+        raise End
 
     except End:
-        try:
-            BOT.AddLog(id, mode, True)
-            BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        except Exception:
-            BOT.AddLog(id, 'None', True)
-            BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
     except Timeout:
-        try:
-            BOT.AddLog(id, mode, False)
-            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        except Exception:
-            BOT.AddLog(id, 'None', False)
-            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
     except Exception:
-        try:
-            BOT.AddLog(id, mode, False)
-            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        except Exception:
-            BOT.AddLog(id, 'None', False)
-            BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+        BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
 
 
 def Mode(id):
@@ -182,9 +171,6 @@ def Mailing(id):
         answer = BOT.AnswerGet(id)
         if answer not in buttons:
             BOT.MessageSend(id, 'Выбериите функцию')
-        else:
-            raise End
-            #return answer
 
 
 Start()

@@ -52,8 +52,6 @@ class Bot:
             return text
         attachments = self.AttachmentsGet(event['attachments'])
         text = event['text']
-        if text == 'Отмена' or text == 'Завершить':
-            raise End
         return {'text': text, 'attachments': attachments}
 
     def AttachmentsGet(self, attachments):
