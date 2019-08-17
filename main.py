@@ -168,7 +168,9 @@ def Mailing(id):
     while True:
         answer = BOT.AnswerGet(id)
         if answer not in buttons:
-            BOT.MessageSend(id, 'Выбериите функцию')
+            BOT.MessageSend(id, 'Используйте кнопки')
+        else:
+            return answer
 
 
 Start()
