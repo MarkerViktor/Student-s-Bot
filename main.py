@@ -182,7 +182,7 @@ def Mailing(id):
             BOT.MessageSend(id, 'Выбериите функцию')
         else:
             return answer  ## #
-    pass
+    raise End
 
 
 Start()
