@@ -183,8 +183,8 @@ def Mailing(id):
         if answer not in buttons:
             BOT.MessageSend(id, 'Выбериите функцию')
         else:
-            return answer  ## #
-    raise End
+            raise End
+            #return answer
 
 
 Start()
