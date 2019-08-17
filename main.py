@@ -44,8 +44,6 @@ def GeneralHandler(id):
                 pass
             elif mailing == 'Редактировать/удалить':
                 pass
-            elif mailing == 'Завершить':
-                pass
         BOT.AddLog(id, mode, True)
         raise End
 
