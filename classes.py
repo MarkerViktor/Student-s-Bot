@@ -218,13 +218,18 @@ class Bot:
         id = event['from_id']
         self.MessageSend(id, 'Нет доступа ⛔')
 
+
+    def AddLog(self, id, task, success):
+        name = self.UserGet(id_or_screen_name=id)['full_name']
+        self.DataAdd('logs', {'user_name': name,'user_id':id,'task':task, 'success': success})
+
 class Timeout(Exception):
     def __init__(self):
-        print('Timeout')
+        print('TIMEOUT')
 
 class End(Exception):
     def __init__(self):
-        print('Cancel')
+        pass
 
 
 def KeyboardMake(options_before: dict = {}, options: dict or list = {},

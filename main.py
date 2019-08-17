@@ -18,36 +18,54 @@ def Start():
                 continue
             if BOT.ExtraEventHandler(event):
                 continue
-            try:
-                GeneralHandler(id)
-            except End:
-                BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
-            except Timeout:
-                BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+            GeneralHandler(id)
 
 
 
 def GeneralHandler(id):
-    mode = Mode(id)
-    print(mode)
-    if mode == 'Управление':
-        control = Control(id)
-        print(control)
-        if control == 'Добавить пользователя':
-            AddUser(id)
-        elif control == 'Добавить беседу':
-            AddChat(id)
-        elif control == 'Список разрешенных пользователей':
-            UsersList(id)
-    elif mode == 'Рассылка':
-        mailing = Mailing(id)
-        if mailing == 'Моментальная рассылка':
-            pass
-        elif mailing == 'Отложенная рассылка':
-            pass
-        elif mailing == 'Редактировать/удалить':
-            pass
-    raise End
+    try:
+        mode = Mode(id)
+        print(mode)
+        if mode == 'Управление':
+            control = Control(id)
+            print(control)
+            if control == 'Добавить пользователя':
+                AddUser(id)
+            elif control == 'Добавить беседу':
+                AddChat(id)
+            elif control == 'Список разрешенных пользователей':
+                UsersList(id)
+        elif mode == 'Рассылка':
+            mailing = Mailing(id)
+            if mailing == 'Моментальная рассылка':
+                pass
+            elif mailing == 'Отложенная рассылка':
+                pass
+            elif mailing == 'Редактировать/удалить':
+                pass
+        BOT.AddLog(id, mode, True)
+
+    except End:
+        try:
+            BOT.AddLog(id, mode, True)
+        except Exception:
+            BOT.AddLog(id, 'None', True)
+        BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
+
+    except Timeout:
+        try:
+            BOT.AddLog(id, mode, False)
+        except Exception:
+            BOT.AddLog(id, 'None', False)
+        BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
+
+    except Exception:
+        try:
+            BOT.AddLog(id, mode, False)
+        except Exception:
+            BOT.AddLog(id, 'None', False)
+
+
 
 
 def Mode(id):
