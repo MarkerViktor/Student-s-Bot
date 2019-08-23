@@ -23,6 +23,7 @@ def Start():
 
 
 def GeneralHandler(id):
+    BOT.MessageSend(id, '* Функции раздела "Рассылка" на данный момент не активны')
     try:
         mode = Mode(id)
         print(mode)
