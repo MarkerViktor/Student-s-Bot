@@ -126,12 +126,12 @@ def ControlAddUser(id):
         BOT.MessageSend(id, 'Добавить еще?', keyboard=keyboard)
         answer = BOT.AnswerGet(id)
         if answer == 'Добавить':
-            AddUser(id)
+            ControlAddUser(id)
 
 
     else:
         BOT.MessageSend(id, 'Неверный формат входных данных')
-        AddUser(id)
+        ControlAddUser(id)
 
 
 def ControlUsersList(id):

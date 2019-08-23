@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="12f8a474-8f65-4afc-991e-dda4ce123ba9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/connect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,45 +72,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="148" column="34" selection-start-line="148" selection-start-column="34" selection-end-line="148" selection-end-column="34" />
+            <state relative-caret-position="186">
+              <caret line="133" column="22" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
               <folding>
                 <element signature="e#155#569#0" />
                 <element signature="e#215#569#0" />
                 <element signature="e#288#569#0" />
                 <element signature="e#416#468#0" />
-                <element signature="e#601#1561#0" />
-                <element signature="e#614#1330#0" />
-                <element signature="e#695#1012#0" />
-                <element signature="e#1059#1311#0" />
-                <element signature="e#1584#2055#0" />
-                <element signature="e#1655#1737#0" />
-                <element signature="e#1761#1808#0" />
-                <element signature="e#1901#2055#0" />
-                <element signature="e#2080#2632#0" />
-                <element signature="e#2149#2308#0" />
-                <element signature="e#2332#2379#0" />
-                <element signature="e#2473#2632#0" />
-                <element signature="e#2663#3979#0" />
-                <element signature="e#2847#3002#0" />
-                <element signature="e#3069#3885#0" />
-                <element signature="e#3135#3556#0" />
-                <element signature="e#3156#3413#0" />
-                <element signature="e#3460#3556#0" />
-                <element signature="e#3906#3979#0" />
-                <element signature="e#4330#4623#0" />
-                <element signature="e#4648#5197#0" />
-                <element signature="e#4713#4878#0" />
-                <element signature="e#4902#4949#0" />
-                <element signature="e#5043#5197#0" />
-                <element signature="e#5227#5286#0" />
-                <element signature="e#5319#5723#0" />
-                <element signature="e#5401#5446#0" />
-                <element signature="e#5470#5514#0" />
-                <element signature="e#5545#5674#0" />
               </folding>
             </state>
           </provider>
@@ -135,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="98" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -149,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -217,9 +185,9 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql" />
         <option value="$PROJECT_DIR$/classes.py" />
         <option value="$PROJECT_DIR$/connect.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -445,21 +413,7 @@
       <workItem from="1566249785853" duration="787000" />
       <workItem from="1566402725054" duration="153000" />
       <workItem from="1566421379088" duration="20000" />
-      <workItem from="1566574851363" duration="4034000" />
-    </task>
-    <task id="LOCAL-00015" summary="Обновление">
-      <created>1562489131802</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1562489131802</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Обновление">
-      <created>1563393638031</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1563393638031</updated>
+      <workItem from="1566574851363" duration="4621000" />
     </task>
     <task id="LOCAL-00017" summary="Обновление">
       <created>1563726035866</created>
@@ -790,11 +744,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566067441443</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Обновление">
+      <created>1566578909447</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1566578909447</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Обновление">
+      <created>1566579189606</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1566579189606</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129983000" />
+    <option name="totallyTimeSpent" value="130570000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,15 +782,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.311804" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49892703" visible="true" weight="0.311804" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32962137" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946353" weight="0.32962137" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32962137" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.2594655" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.32962137" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.577951" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32962137" />
@@ -911,7 +879,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Student_s_Bot$connect.coverage" NAME="connect Coverage Results" MODIFIED="1562476442486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Students_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1564427189274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566574964440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Student_s_Bot$main.coverage" NAME="main Coverage Results" MODIFIED="1566579392930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$new_func.coverage" NAME="new_func Coverage Results" MODIFIED="1565291332273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$main_2.coverage" NAME="main_2 Coverage Results" MODIFIED="1565472957735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Student_s_Bot$test.coverage" NAME="test Coverage Results" MODIFIED="1566578854392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1061,13 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="98" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/database/d122m0li79605d/schema/public/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="b3495fb8-9797-4f44-adb0-4f65948df9a7">
@@ -1097,52 +1058,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="148" column="34" selection-start-line="148" selection-start-column="34" selection-end-line="148" selection-end-column="34" />
+        <state relative-caret-position="186">
+          <caret line="133" column="22" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
           <folding>
             <element signature="e#155#569#0" />
             <element signature="e#215#569#0" />
             <element signature="e#288#569#0" />
             <element signature="e#416#468#0" />
-            <element signature="e#601#1561#0" />
-            <element signature="e#614#1330#0" />
-            <element signature="e#695#1012#0" />
-            <element signature="e#1059#1311#0" />
-            <element signature="e#1584#2055#0" />
-            <element signature="e#1655#1737#0" />
-            <element signature="e#1761#1808#0" />
-            <element signature="e#1901#2055#0" />
-            <element signature="e#2080#2632#0" />
-            <element signature="e#2149#2308#0" />
-            <element signature="e#2332#2379#0" />
-            <element signature="e#2473#2632#0" />
-            <element signature="e#2663#3979#0" />
-            <element signature="e#2847#3002#0" />
-            <element signature="e#3069#3885#0" />
-            <element signature="e#3135#3556#0" />
-            <element signature="e#3156#3413#0" />
-            <element signature="e#3460#3556#0" />
-            <element signature="e#3906#3979#0" />
-            <element signature="e#4330#4623#0" />
-            <element signature="e#4648#5197#0" />
-            <element signature="e#4713#4878#0" />
-            <element signature="e#4902#4949#0" />
-            <element signature="e#5043#5197#0" />
-            <element signature="e#5227#5286#0" />
-            <element signature="e#5319#5723#0" />
-            <element signature="e#5401#5446#0" />
-            <element signature="e#5470#5514#0" />
-            <element signature="e#5545#5674#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/08e98a58-21eb-48c3-b4f0-826bcd3f7ac2/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
