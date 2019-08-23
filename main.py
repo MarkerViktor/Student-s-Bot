@@ -30,22 +30,21 @@ def GeneralHandler(id):
             control = Control(id)
             print(control)
             if control == 'Добавить пользователя':
-                AddUser(id)
+                ControlAddUser(id)
             elif control == 'Добавить беседу':
-                AddChat(id)
+                ControlAddChat(id)
             elif control == 'Список разрешенных пользователей':
-                UsersList(id)
+                ControlUsersList(id)
 
         elif mode == 'Рассылка':
             mailing = Mailing(id)
             if mailing == 'Моментальная рассылка':
-                pass
+                MailingMoment(id)
             elif mailing == 'Отложенная рассылка':
                 pass
             elif mailing == 'Редактировать/удалить':
                 pass
 
-        BOT.AddLog(id, mode, True)
         raise End
 
     except End:
@@ -53,17 +52,8 @@ def GeneralHandler(id):
 
     except Timeout:
         BOT.MessageSend(id, 'Время ожидания истекло', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        try:
-            BOT.AddLog(id, mode, False)
-        except Exception:
-            BOT.AddLog(id, 'None', False)
 
-    except Exception:
-        BOT.MessageSend(id, 'Завершено', keyboard=KeyboardMake({'Начать': 'default'})[0])
-        try:
-            BOT.AddLog(id, mode, False)
-        except Exception:
-            BOT.AddLog(id, 'None', False)
+
 
 
 def Mode(id):
@@ -108,7 +98,7 @@ def Control(id):
             return answer ## #
 
 
-def AddUser(id):
+def ControlAddUser(id):
     # Добавление пользователя
     BOT.MessageSend(id, 'Укажите ссылку на страницу пользователя',
                  keyboard=KeyboardMake({'Отмена': 'negative'})[0])
@@ -123,7 +113,7 @@ def AddUser(id):
                 name = user['full_name']
                 user_id = user['id']
                 BOT.DataAdd('users', {'name': name, 'id': user_id})
-                BOT.MessageSend(id, f'{name} c ID = {user_id} успешно внесён в БД')
+                BOT.MessageSend(id, f'{name} c ID = {user_id} успешно внесён(а) в БД')
             except Exception:
                 BOT.MessageSend(id, 'Неверный формат входных данных, попробуйте снова')
                 continue
@@ -143,17 +133,24 @@ def AddUser(id):
         AddUser(id)
 
 
-def UsersList(id):
+def ControlUsersList(id):
     # Показать список разрешенных пользователей
     users = list(dict(BOT.DataGet('users', 'name')).values())
-    users_list = ''
+    list_of_strings = list()
+    string = 0
     for number in range(len(users)):
-        users_list += f'{number+1} — {users[number]}\n'
+        if number%100 == 0:
+            if number != 0:
+                string += 1
+            list_of_strings.append('')
+        list_of_strings[string] += f'{number+1} — {users[number]}\n'
+    BOT.MessageSend(id, 'Разрешенные пользователи:')
+    for string in list_of_strings:
+        BOT.MessageSend(id, string)
 
-    BOT.MessageSend(id, 'Разрешенные пользователи:\n' + users_list)
 
 
-def AddChat(id):
+def ControlAddChat(id):
     # Добавление беседы
     BOT.MessageSend(id, 'Чтобы использовать бота для новой беседы:')
     BOT.MessageSend(id, '— Пригласите бота в беседу с помощью кнопки на стене сообщества бота')
@@ -166,8 +163,8 @@ def Mailing(id):
     keyboard, buttons = KeyboardMake(
         options={
             'Моментальная рассылка': 'primary',
-            'Отложенная рассылка': 'primary',
-            'Редактировать/удалить (last 24 h)': 'primary',
+            'Отложенная рассылка': 'default',
+            'Редактировать/удалить (last 24 h)': 'default',
         },
         options_after={
             'Завершить': 'negative'
@@ -181,5 +178,25 @@ def Mailing(id):
         else:
             return answer
 
+
+def MailingMoment(id):
+    # Моментальная рассылка
+    message = MailingMassageGet(id)
+
+def MailingMassageGet(id):
+    mailing = Message()
+    keyboard, buttons = KeyboardMake(
+
+        options_before={
+            'Просмотр': 'default'
+        },
+        options_after={
+            'Отмена': 'negative'
+        }
+    )
+    BOT.MessageSend(id, 'Отправьте сообщение с рассылаемыми текстом и вложениями или перешлите чужое '
+                        'сообщение, содержащее их', keyboard=keyboard)
+    while True:
+        pass
 
 Start()

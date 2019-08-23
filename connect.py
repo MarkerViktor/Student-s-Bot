@@ -12,13 +12,13 @@ def make():
     try:
         try:
             cursor, conn = connect_database('heroku')
-        except Exception:
+        except Exception as e:
             cursor, conn = connect_database()
 
         vk, longpoll = connect_vk()
         print("\tVK and Database is connected")
-    except Exception:
-        print("\tVK and Database can't be connected")
+    except Exception as e:
+        print("\tVK and Database can't be connected", e)
         time.sleep(5)
         return make()
     bot = Bot(vk, longpoll, cursor, conn)

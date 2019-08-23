@@ -9,7 +9,7 @@ class Bot:
         self.cursor = cursor
         self.conn = conn
 
-    def MessageSend(self, id, message, attachments='', keyboard=''):
+    def MessageSend(self, id=0, message: str='', attachments: list='', keyboard='', ids=[], object: dict ={}):
         """
         :param id:
         :param message:
@@ -17,14 +17,44 @@ class Bot:
         :param keyboard:
         :return:
         """
+        id, message, attachments, keyboard = id, message, attachments, keyboard
+        if len(object) != 0:
+            if 'id' in object.keys():
+                id = object['id']
+
+            if 'text' in object.keys():
+                message = object['text']
+
+            if 'attachments' in object.keys():
+                attachments = object['attachments']
+
+            if 'keyboard' in object.keys():
+                keyboard = object['keyboard']
+
+            if 'ids' in object.keys():
+                ids = object['ids']
+
         try:
-            return self.vk.messages.send(
-                peer_id = id,
-                message = message,
-                attachment = ','.join(attachments),
-                keyboard = keyboard,
-                random_id = randint(0, 9223372036854775807)
-            )
+            if len(ids) == 0:
+                return self.vk.messages.send(
+                    peer_id = id,
+                    message = message,
+                    attachment = ','.join(attachments),
+                    keyboard = keyboard,
+                    random_id = randint(0, 9223372036854775807)
+                )
+            else:
+                messages = list()
+                for id in ids:
+                    messages.append(self.vk.messages.send(
+                        peer_id=id,
+                        message=message,
+                        attachment=','.join(attachments),
+                        keyboard=keyboard,
+                        random_id=randint(0, 9223372036854775807)
+                    ))
+                    return messages
+
         except Exception as x:
             print('MessageSend Error', x)
 
@@ -217,9 +247,23 @@ class Bot:
         self.MessageSend(id, 'Нет доступа ⛔')
 
 
-    def AddLog(self, id, task, success):
-        name = self.UserGet(id_or_screen_name=id)['full_name']
-        self.DataAdd('logs', {'user_name': name,'user_id':id,'task':task, 'success': success})
+class Message():
+
+    def __init__(self, ids=[], text='', attachments = []):
+        self.text = text
+        self.attachments = attachments
+        self.ids = ids
+
+    def Get(self):
+        return {
+            'text': self.text,
+            'attachments': self.attachments,
+            'ids': self.ids
+        }
+
+
+
+
 
 class Timeout(Exception):
     def __init__(self):
@@ -228,6 +272,9 @@ class Timeout(Exception):
 class End(Exception):
     def __init__(self):
         pass
+
+
+
 
 
 def KeyboardMake(options_before: dict = {}, options: dict or list = {},
@@ -275,7 +322,7 @@ def KeyboardMake(options_before: dict = {}, options: dict or list = {},
 
     # добавление options_after
     if len(options_after) != 0:
-        if len(options) != 0:
+        if len(options) != 0 or len(options_before) != 0:
             keyboard.add_line()
         for label, color in options_after.items():
             if color in ['default', 'negative', 'positive', 'primary']:
