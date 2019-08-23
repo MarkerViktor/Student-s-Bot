@@ -24,7 +24,6 @@ def Start():
 
 def GeneralHandler(id):
     try:
-        BOT.MessageSend(id, '*Функционал раздела "Рассылка" на данный момент не рабоатет') 
         mode = Mode(id)
         print(mode)
         if mode == 'Управление':
