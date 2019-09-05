@@ -128,7 +128,7 @@ class Bot:
                 return 'Error'
         if id_or_screen_name != '':
             try:
-                person = self.vk.users.get(user_ids=id_or_screen_name)[0]
+                person = self.vk.users.get(user_ids=id_or_screen_name, lang=ru)[0]
             except Exception:
                 return 'Error'
 
