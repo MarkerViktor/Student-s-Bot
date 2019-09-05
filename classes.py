@@ -75,10 +75,13 @@ class Bot:
         if self.UserCheck(event, id):
             return self.AnswerGet(id, only_text)
 
+        if len(event['fwd_messages']) != 0:
+            event = event['fwd_messages'][0]
+        text = event['text']
+        if text == 'Отмена' or text == 'Завершить':
+            raise End
+
         if only_text:
-            text = event['text']
-            if text == 'Отмена' or text == 'Завершить':
-                raise End
             return text
         attachments = self.AttachmentsGet(event['attachments'])
         text = event['text']
@@ -179,7 +182,7 @@ class Bot:
         peer_id = event['peer_id']
         from_id = event['from_id']
         if peer_id != id and from_id != id:
-            self.MessageSend(from_id, 'Бот сейчас занят, обратись позже)')
+
             return True
         return False
 
@@ -245,24 +248,6 @@ class Bot:
     def OtherUserHandler(self, event):
         id = event['from_id']
         self.MessageSend(id, 'Нет доступа ⛔')
-
-
-class Message():
-
-    def __init__(self, ids=[], text='', attachments = []):
-        self.text = text
-        self.attachments = attachments
-        self.ids = ids
-
-    def Get(self):
-        return {
-            'text': self.text,
-            'attachments': self.attachments,
-            'ids': self.ids
-        }
-
-
-
 
 
 class Timeout(Exception):

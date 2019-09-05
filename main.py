@@ -182,22 +182,53 @@ def Mailing(id):
 
 def MailingMoment(id):
     # Моментальная рассылка
-    message = MailingMassageGet(id)
+    text, attachments = MailingMassageGet(id)
+
+    groups = MailingMassageGet(id)
+
+
+
+
 
 def MailingMassageGet(id):
-    mailing = Message()
     keyboard, buttons = KeyboardMake(
+        options_after={
+            'Отмена': 'negative'
+        }
+    )
 
+    BOT.MessageSend(id, 'Отправьте сообщение с рассылаемыми текстом и вложениями или перешлите чужое '
+                        'сообщение, содержащее их', keyboard=keyboard)
+    answer = BOT.AnswerGet(id, False)
+    text = answer['text']
+    attachments = answer['attachments']
+
+    keyboard, buttons = KeyboardMake(
         options_before={
-            'Просмотр': 'default'
+            'Изменить сообщ.': 'default',
+            'Подтвердить': 'positive'
         },
         options_after={
             'Отмена': 'negative'
         }
     )
-    BOT.MessageSend(id, 'Отправьте сообщение с рассылаемыми текстом и вложениями или перешлите чужое '
-                        'сообщение, содержащее их', keyboard=keyboard)
-    while True:
-        pass
 
+    BOT.MessageSend(id, 'Получатели увидят рассылку так:')
+    BOT.MessageSend(id, text, attachments, keyboard)
+
+    while True:
+        answer = BOT.AnswerGet(id)
+        if answer not in buttons:
+            BOT.MessageSend(id, 'Используйте кнопки')
+        elif answer == 'Изменить сообщ.':
+            return MailingMassageGet(id)
+        elif answer == 'Подтвердить':
+            print(text, attachments)
+            return text, attachments
+
+
+
+
+def MailingSelectGroups(id):
+    pass
 Start()
